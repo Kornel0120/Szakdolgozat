@@ -12,18 +12,13 @@ public class RoomTemplates : MonoBehaviour
     public GameObject KeyRoom;
     public GameObject CheckPointRoom;
     public GameObject TrapRoom;
-    //public GameObject BottomStairsRoom;
-    //public GameObject TopStairsRoom;
-    //public GameObject LeftStairsRoom;
-    //public GameObject RightStairsRoom;
-    //public GameObject intersectionRoom;
-    //public GameObject closedRoom;
 
     public List<List<GameObject>> rooms = new List<List<GameObject>>();
     //public List<GameObject> rooms;
     //public List<Vector3> targetPostitions = new List<Vector3>();
     public List<Vector3> positions = new List<Vector3>();
     public Graph g = new Graph(4);
+    public int Index = 0;
 
     public class Graph
     {
@@ -42,13 +37,24 @@ public class RoomTemplates : MonoBehaviour
         public int getV() { return V; }
         public int getE() { return E; }
 
-        public void addEdge(Node v, Node w)
+        public void addEdge(Node v/*, Node w*/)
         {
             int tempi = v.getIndex();
-            GameObject tempg = w.getgObject();
-            adj[v.getIndex()].Add(w.getgObject());   // Add w to v`s list
-            adj[w.getIndex()].Add(v.getgObject());   // add v to w`s list
+            //GameObject tempg = w.getgObject();
+            adj[v.getIndex()].Add(v.getgObject()); 
+            /*adj[w.getIndex()].Add(v.getgObject());*/
             E++;
+        }
+
+        public GameObject FindLast(int Index)
+        {
+            GameObject last = adj[Index][adj[Index].Count];
+            return last;
+        }
+
+        public void deleteLast(int Index)
+        {
+            adj[Index].RemoveAt(adj[Index].Count);
         }
 
         public string toStr()
@@ -78,14 +84,8 @@ public class RoomTemplates : MonoBehaviour
 
 
         public int getIndex() { return Index; }
-
-        //public int setIndex() { return Index++; }
         
         public GameObject getgObject() { return gObject; }
-
-        //public GameObject setgObject(GameObject gObj) {
-        //    gObject = gObj;
-        //    return gObject; }
 
     }
 

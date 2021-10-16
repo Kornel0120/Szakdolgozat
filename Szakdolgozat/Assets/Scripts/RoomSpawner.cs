@@ -9,19 +9,6 @@ public class RoomSpawner : MonoBehaviour
     // 2 --> felsõ ajtó kell RoomSpawnPoint (2)
     // 3 --> bal aljtó kell RoomSpawnPoint (3)
     // 4 --> jobb ajtó kell RoomSpawnPoint (1)
-    //public bool stairSpawn;
-    //private int stairRoomSpawn;
-    //public int stairRoomChance1;
-    //public int stairRoomChance2;
-    //public bool intersectionSpawn;
-    //private int intersectionRoomSpawn;
-    //public int intersectionRoomChance1;
-    //public int intersectionRoomChance2;
-
-    //bottomRooms
-    // topRooms
-    // leftRooms
-    // rightRooms
 
     public int Index;
 
@@ -78,14 +65,22 @@ public class RoomSpawner : MonoBehaviour
     {
         if (other.CompareTag("RoomSpawnPoint"))
         {
-            if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
+            if (other.GetComponent<RoomSpawner>().spawned == false && spawned == true)
             {
-                //Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
-                Destroy(other.gameObject); //ez a nyitott jaratokat zarja le es torli a spaawn pointjat.
+                GameObject last = templates.g.FindLast(this.gameObject.GetComponent<RoomSpawner>().Index);
+                Destroy(last);
+                templates.g.deleteLast(this.gameObject.GetComponent<RoomSpawner>().Index);
+                //last = templates.g.FindLast(this.gameObject.GetComponent<RoomSpawner>().Index);
+                spawned = false;
             }
         }
+        else
+        {
+            spawned = true; //ez allitja meg a szobak egymasba spawnolasat.
+        }
+        Debug.LogFormat("this gameobject nev: {0}, other gameobject nev: {0}", this.gameObject.name, other.gameObject.name);
+
         
-        spawned = true; //ez allitja meg a szobak egymasba spawnolasat.
-        
+
     }
 }

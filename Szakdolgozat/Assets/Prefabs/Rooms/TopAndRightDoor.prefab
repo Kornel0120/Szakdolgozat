@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8952834571772871778}
   m_Layer: 0
   m_Name: Wall (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d51bb98fb9a354daf05f918329f5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastIndex: 0
 --- !u!1 &3753787218095198601
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,8 +314,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 1
-  spawned: 0
-  spawnRoomSpawned: 0
+  Index: 0
+  isSpawned: 0
+  isSpawnRoomSpawned: 0
   roomsCount: 0
   waitTime: 4
 --- !u!1 &5675161988122327176
@@ -392,8 +394,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 3
-  spawned: 0
-  spawnRoomSpawned: 0
+  Index: 0
+  isSpawned: 0
+  isSpawnRoomSpawned: 0
   roomsCount: 0
   waitTime: 4
 --- !u!1 &6476345571534967318
@@ -410,7 +413,7 @@ GameObject:
   - component: {fileID: 997102826961017827}
   m_Layer: 0
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

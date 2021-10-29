@@ -77,8 +77,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 4
   Index: 2
-  spawned: 0
-  spawnRoomSpawned: 0
+  isSpawned: 0
+  isSpawnRoomSpawned: 0
   roomsCount: 50
   waitTime: 4
 --- !u!114 &1971699442193959384
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 4234347657989624553}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 6412054143995570700}
   m_Layer: 0
   m_Name: Wall (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 7238736247704292913}
   m_Layer: 0
   m_Name: Wall (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 5837242651915538243}
   m_Layer: 0
   m_Name: Wall (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 6168716451644880496}
   m_Layer: 0
   m_Name: Wall (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 3027820418143227342}
   m_Layer: 0
   m_Name: Wall (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -744,8 +744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 3
   Index: 0
-  spawned: 0
-  spawnRoomSpawned: 0
+  isSpawned: 0
+  isSpawnRoomSpawned: 0
   roomsCount: 50
   waitTime: 4
 --- !u!114 &7811854131215360924
@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 3321738014822126933}
   m_Layer: 0
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1113,8 +1113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 2
   Index: 3
-  spawned: 0
-  spawnRoomSpawned: 0
+  isSpawned: 0
+  isSpawnRoomSpawned: 0
   roomsCount: 50
   waitTime: 4
 --- !u!65 &633521132447210433
@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 7036085915306349603}
   m_Layer: 0
   m_Name: Wall (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1255,7 +1255,7 @@ GameObject:
   - component: {fileID: 5510028503956271865}
   m_Layer: 0
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1445,7 +1445,7 @@ GameObject:
   - component: {fileID: 7909800587335565474}
   m_Layer: 0
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1540,7 +1540,7 @@ GameObject:
   - component: {fileID: 7672720768775003373}
   m_Layer: 0
   m_Name: Wall (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1697,7 +1697,7 @@ GameObject:
   - component: {fileID: 4282432814045515217}
   m_Layer: 0
   m_Name: Wall (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1950,8 +1950,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 1
   Index: 3
-  spawned: 0
-  spawnRoomSpawned: 0
+  isSpawned: 0
+  isSpawnRoomSpawned: 0
   roomsCount: 50
   waitTime: 4
 --- !u!114 &3405125329433133282
@@ -2079,7 +2079,7 @@ GameObject:
   - component: {fileID: 2775474202179474528}
   m_Layer: 0
   m_Name: Wall (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2231,7 +2231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d51bb98fb9a354daf05f918329f5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 0
+  lastIndex: 0
 --- !u!114 &4536927782604957386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2279,7 +2279,7 @@ GameObject:
   - component: {fileID: 1109223967921592012}
   m_Layer: 0
   m_Name: Wall (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2374,7 +2374,7 @@ GameObject:
   - component: {fileID: 5172548717782175415}
   m_Layer: 0
   m_Name: Wall (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2469,7 +2469,7 @@ GameObject:
   - component: {fileID: 3305489799787875494}
   m_Layer: 0
   m_Name: Wall (12)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

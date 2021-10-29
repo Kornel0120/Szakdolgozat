@@ -227,7 +227,6 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -300,20 +299,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &963194229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef5d48de27b66dd47a999f141cac1ec1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  lookAt: {fileID: 0}
 --- !u!1 &1961903536
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,8 +357,9 @@ MonoBehaviour:
   KeyRoom: {fileID: 2477093923600909799, guid: b1c2c618e5968bf4aadb1f7a2d57c032, type: 3}
   CheckPointRoom: {fileID: 2106583271663542790, guid: a314a6019ca02fb4aaf2aa77a934bb72, type: 3}
   TrapRoom: {fileID: 8697051537438855123, guid: 29c02b31c93b3234686e010c9b03ff3c, type: 3}
-  rooms: []
   positions: []
+  lastIndex: 0
+  g: {fileID: 0}
 --- !u!4 &1961903538
 Transform:
   m_ObjectHideFlags: 0
@@ -400,4 +386,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4787696127531746ba9b7da724a591c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRoomSpawned: 0
+  isSpawnRoomSpawned: 0

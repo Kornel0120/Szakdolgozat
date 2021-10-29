@@ -75,8 +75,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 4
-  spawned: 0
-  spawnRoomSpawned: 0
+  Index: 0
+  isSpawned: 0
+  isSpawnRoomSpawned: 0
   roomsCount: 0
   waitTime: 4
 --- !u!1 &1425023389587744454
@@ -93,7 +94,7 @@ GameObject:
   - component: {fileID: 2183273359064207402}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,8 +250,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 1
-  spawned: 0
-  spawnRoomSpawned: 0
+  Index: 0
+  isSpawned: 0
+  isSpawnRoomSpawned: 0
   roomsCount: 0
   waitTime: 4
 --- !u!1 &6356957065482894904
@@ -267,7 +269,7 @@ GameObject:
   - component: {fileID: 2515079877273954337}
   m_Layer: 0
   m_Name: Wall (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,3 +493,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d51bb98fb9a354daf05f918329f5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastIndex: 0

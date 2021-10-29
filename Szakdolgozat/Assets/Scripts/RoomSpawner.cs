@@ -15,8 +15,8 @@ public class RoomSpawner : MonoBehaviour
 
     private RoomTemplates templates;
     private int rand;
-    public bool spawned = false;
-    public bool spawnRoomSpawned = false;
+    public bool isSpawned = false;
+    public bool isSpawnRoomSpawned = false;
     public int roomsCount = 0;
 
     public float waitTime = 10f;
@@ -31,7 +31,7 @@ public class RoomSpawner : MonoBehaviour
     void Spawn()
     {
         
-        if (spawned == false /*&& templates.rooms.Count != roomsCount*/)
+        if (isSpawned == false /*&& templates.rooms.Count != roomsCount*/)
         {      
             if (openingDirection == 1)
             {
@@ -58,27 +58,26 @@ public class RoomSpawner : MonoBehaviour
                 roomsCount++;
             }               
         }
-        spawned = true;
+        isSpawned = true;
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("RoomSpawnPoint"))
         {
-            if (other.GetComponent<RoomSpawner>().spawned == false && spawned == true)
+            if (other.GetComponent<RoomSpawner>().isSpawned == false && isSpawned == true)
             {
-                GameObject last = templates.g.FindLast(this.gameObject.GetComponent<RoomSpawner>().Index);
-                Destroy(last);
-                templates.g.deleteLast(this.gameObject.GetComponent<RoomSpawner>().Index);
+                //GameObject last = templates.g.FindLast(this.gameObject.GetComponent<RoomSpawner>().Index);
+                //Destroy(last);
+                //templates.g.deleteLast(this.gameObject.GetComponent<RoomSpawner>().Index);
                 //last = templates.g.FindLast(this.gameObject.GetComponent<RoomSpawner>().Index);
-                spawned = false;
+                isSpawned = false;
             }
         }
         else
         {
-            spawned = true; //ez allitja meg a szobak egymasba spawnolasat.
+            isSpawned = true; //ez allitja meg a szobak egymasba spawnolasat.
         }
-        Debug.LogFormat("this gameobject nev: {0}, other gameobject nev: {0}", this.gameObject.name, other.gameObject.name);
 
         
 

@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpawnRoomSpawn : MonoBehaviour
 {
     private RoomTemplates templates;
-    public bool spawnRoomSpawned = false;
+    public bool isSpawnRoomSpawned = false;
+    
     void Start()
     {
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
@@ -14,10 +15,9 @@ public class SpawnRoomSpawn : MonoBehaviour
 
     void SpawnRoom()
     {
-        if(spawnRoomSpawned == false)
+        if(isSpawnRoomSpawned == false)
         {
             Instantiate(templates.SpawnRoom, new Vector3(0.5f, 0, 0.5f), Quaternion.identity);
-            spawnRoomSpawned = true;
         }
     }
 }

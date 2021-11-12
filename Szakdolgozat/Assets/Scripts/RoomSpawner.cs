@@ -71,7 +71,7 @@ public class RoomSpawner : MonoBehaviour
                 //Destroy(last);
                 //templates.g.deleteLast(this.gameObject.GetComponent<RoomSpawner>().Index);
                 //last = templates.g.FindLast(this.gameObject.GetComponent<RoomSpawner>().Index);
-                isSpawned = false;
+                isSpawned = true;
             }
         }
         else
@@ -79,7 +79,7 @@ public class RoomSpawner : MonoBehaviour
             isSpawned = true; //ez allitja meg a szobak egymasba spawnolasat.
         }
 
-        
+        //megall a spawnolas pedig nem kellene.
 
     }
 }

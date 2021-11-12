@@ -53,17 +53,17 @@
     <UnityVersion>2020.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\WallCheck.cs" />
     <Compile Include="Assets\Scripts\AddRoom.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerSpawn.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\SpecialRoomSpawner.cs" />
+    <Compile Include="Assets\Scripts\Graph.cs" />
     <Compile Include="Assets\Scripts\Route.cs" />
     <Compile Include="Assets\Scripts\RoomTemplates.cs" />
     <Compile Include="Assets\Scripts\RoomSpawner.cs" />
     <Compile Include="Assets\Scripts\SpawnRoomSpawn.cs" />
-    <Compile Include="Assets\Scripts\Graph.cs" />
-    <Compile Include="Assets\Scripts\WallCheck.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

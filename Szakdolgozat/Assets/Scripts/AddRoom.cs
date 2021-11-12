@@ -14,12 +14,17 @@ public class AddRoom : MonoBehaviour
     //2 -> Kek oldal
     //3 -> Piros oldal
 
-    void Start()
+    private void Start()
     {
-        templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        lastIndex = templates.lastIndex;
+        templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();        
         SRS = GameObject.FindGameObjectWithTag("Rooms").GetComponent<SpawnRoomSpawn>();
+        Invoke("addRoom", 0.1f);
+    }
 
+    void addRoom()
+    {
+        lastIndex = templates.lastIndex;
+        
 
         //Index = this.gameObject.GetComponentInChildren<RoomSpawner>().Index;
         if(SRS.isSpawnRoomSpawned == false)
@@ -64,6 +69,7 @@ public class AddRoom : MonoBehaviour
             }
         }
 
+        
         //if(lastIndex < 3)
         //{
         //    lastIndex++;
@@ -82,10 +88,54 @@ public class AddRoom : MonoBehaviour
         //RoomTemplates.Node temp2 = new RoomTemplates.Node(Index, this.gameObject);
 
         //templates.g.addEdge(temp1/*, temp2*/);
+        
         Debug.Log(templates.g.toStr());
 
         //List<GameObject> temp = new List<GameObject>();
         //temp.Add(this.gameObject);
         //templates.rooms.Add(temp);
+
+       
+
+    } 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (gameObject.tag == "Room" && other.gameObject.tag == "Wall" && other.gameObject.tag != "RoomSpawnPoint")
+        {
+            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!COLLIDE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + gameObject.name);
+
+            Node temp;
+
+            for (int i = 0; i < templates.nodes.Count; i++)
+            {
+                if (templates.nodes[i].gObject == gameObject)
+                {
+                    temp = templates.nodes[i];
+                    Debug.Log("Törölt elem: " + temp.gObject);
+                    templates.nodes.Remove(temp);
+                    Destroy(temp.gObject);
+                    break;
+                }
+                Debug.Log("Nodes Lista: " + templates.nodes[i].gObject);
+            }
+
+
+
+            //foreach(Node node in templates.nodes)
+            //{
+            //    if (node.gObject == gameObject)
+            //    {
+            //        temp = node;
+            //        Debug.Log("Törölt elem: {0}", temp.gObject);
+            //        templates.nodes.Remove(temp);
+            //        break;
+            //    }
+            //    Debug.Log("Nodes Lista: {0}", node.gObject);
+            //}
+
+
+
+            //Destroy(gameObject);
+        }
     }
 }

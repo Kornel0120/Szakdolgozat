@@ -10,9 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1322294478700916909}
   - component: {fileID: 1623382119451861800}
+  - component: {fileID: 7490070681721731611}
+  - component: {fileID: 2961803711982310181}
+  - component: {fileID: 1916709466495867858}
   m_Layer: 0
   m_Name: BottomLeftDoorRoom
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +52,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastIndex: 0
+--- !u!54 &7490070681721731611
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365295052536472309}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2961803711982310181
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365295052536472309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.05, z: 0.25}
+  m_Center: {x: 0, y: 0.45, z: 0.6}
+--- !u!65 &1916709466495867858
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365295052536472309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.05, z: 0.5}
+  m_Center: {x: 0.6, y: 0.45, z: 0}
 --- !u!1 &4758128773293889052
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +344,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 1, z: 0.1}
+  m_Size: {x: 0.1, y: 0.55, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &657118734596406582
 MonoBehaviour:
@@ -379,7 +424,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 1, z: 0.1}
+  m_Size: {x: 0.5, y: 0.55, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4443968857722925778
 MonoBehaviour:

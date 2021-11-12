@@ -49,7 +49,11 @@ public class Graph
                 for (int j = 0; j < roomLists[i].Count; j++)
                 {
                     if (roomLists[i][j].gObject == g)
-                        return roomLists[i][j];
+                    { 
+                        visited.Clear();
+                        return roomLists[i][j]; 
+                    }
+                        
                 }
             }
         }
@@ -57,8 +61,13 @@ public class Graph
         if (V < templates.g.roomLists.Count)
             return DFS(V + 1, g);
         else
+        {
+            visited.Clear();
             return null;
+        }
+            
     }
+
 
     public void DeleteFromGraph(int V,Node g)
     {
@@ -93,7 +102,9 @@ public class Graph
             s += v + ":";
             foreach (Node w in this.roomLists[v])
                 s += w.gObject.ToString() + ", ";
+            s += "Rooms: " + roomLists[v].Count;
             s += '\n';
+            
         }
         return s;
     }

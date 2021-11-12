@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class WallCheck : MonoBehaviour
 {
-    private RoomTemplates templates;
+    // Start is called before the first frame update
     void Start()
     {
-        templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
+        
     }
 
-    // Update is called once per frame
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Wall"))
+        if(gameObject.tag == "Room" && other.gameObject.tag == "Wall")
         {
-            Node temp = templates.g.DFS(0,other.gameObject);
-            templates.g.DeleteFromGraph(0, temp);
-        }
+            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!COLLIDE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + gameObject.name);
+        }  
     }
 }

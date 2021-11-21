@@ -23,10 +23,8 @@ public class AddRoom : MonoBehaviour
 
     void addRoom()
     {
-        lastIndex = templates.lastIndex;
-        
-
         //Index = this.gameObject.GetComponentInChildren<RoomSpawner>().Index;
+        lastIndex = templates.lastIndex;
         if(SRS.isSpawnRoomSpawned == false)
         {
             templates.g.rootNode = new Node(new Vector3(templates.SpawnRoom.transform.position.x,
@@ -56,7 +54,8 @@ public class AddRoom : MonoBehaviour
         else
         {
             Node temp = new Node(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), this.gameObject, templates.nodes[0]);
-            templates.nodes.RemoveAt(0);
+            if(templates.nodes.Count != 0)
+                templates.nodes.RemoveAt(0);
             templates.nodes.Add(temp);
             templates.g.addEdge(temp);
             for (int i = 0; i < templates.isFirstRoomsGenerated.Count; i++)
@@ -65,9 +64,10 @@ public class AddRoom : MonoBehaviour
             }
             for (int i = 0; i < templates.nodes.Count; i++)
             {
-                Debug.Log(templates.nodes[i].gObject);
+                Debug.Log(templates.nodes[i].gObject); 
             }
         }
+        Debug.Log(templates.g.toStr());
 
         
         //if(lastIndex < 3)
@@ -89,37 +89,35 @@ public class AddRoom : MonoBehaviour
 
         //templates.g.addEdge(temp1/*, temp2*/);
         
-        Debug.Log(templates.g.toStr());
+        
 
         //List<GameObject> temp = new List<GameObject>();
         //temp.Add(this.gameObject);
         //templates.rooms.Add(temp);
-
-       
-
-    } 
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (gameObject.tag == "Room" && other.gameObject.tag == "Wall" && other.gameObject.tag != "RoomSpawnPoint")
         {
-            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!COLLIDE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + gameObject.name);
-
             Node temp;
-
-            for (int i = 0; i < templates.nodes.Count; i++)
+            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!COLLIDE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + gameObject.name);
+            foreach (var node in templates.nodes)
             {
-                if (templates.nodes[i].gObject == gameObject)
-                {
-                    temp = templates.nodes[i];
-                    Debug.Log("Törölt elem: " + temp.gObject);
-                    templates.nodes.Remove(temp);
-                    Destroy(temp.gObject);
-                    break;
-                }
-                Debug.Log("Nodes Lista: " + templates.nodes[i].gObject);
+                Debug.Log("Nodes lista: "+ node.gObject);
             }
-
-
+            
+            Destroy(this.gameObject);
+            if(templates.nodes.Count != 0)
+                templates.nodes.RemoveAt(templates.nodes.Count-1);
+            //for (int i = 0; i < templates.nodes.Count; i++)
+            //{
+            //        temp = templates.nodes[i];
+            //        Debug.Log("Törölt elem: " + temp.gObject);
+            //        templates.nodes.Remove(temp);
+            //        break;
+            //        Debug.Log("Nodes Lista: " + templates.nodes[i].gObject);
+            //}
+            //Destroy(gameObject);
 
             //foreach(Node node in templates.nodes)
             //{
@@ -135,7 +133,6 @@ public class AddRoom : MonoBehaviour
 
 
 
-            //Destroy(gameObject);
         }
     }
 }

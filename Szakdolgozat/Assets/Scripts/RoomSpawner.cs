@@ -30,7 +30,6 @@ public class RoomSpawner : MonoBehaviour
 
     void Spawn()
     {
-        
         if (isSpawned == false /*&& templates.rooms.Count != roomsCount*/)
         {      
             if (openingDirection == 1)

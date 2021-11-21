@@ -17,7 +17,6 @@ public class RoomTemplates : MonoBehaviour
     //public List<GameObject> rooms;
     //public List<Vector3> targetPostitions = new List<Vector3>();
     public List<Vector3> positions = new List<Vector3>();
-
     public List<Node> nodes = new List<Node>();
     public int lastIndex = 0;
     //public static GameObject spawnRoom = GameObject.FindGameObjectWithTag("SpawnRoom");

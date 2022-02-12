@@ -10,75 +10,140 @@ public class RoomSpawner : MonoBehaviour
     // 3 --> bal aljtó kell RoomSpawnPoint (3)
     // 4 --> jobb ajtó kell RoomSpawnPoint (1)
 
-    public int Index;
-
-
     private RoomTemplates templates;
     private int rand;
-    public bool isSpawned = false;
-    public bool isSpawnRoomSpawned = false;
-    public int roomsCount = 0;
 
-    public float waitTime = 10f;
+    [Header("Bools")]
+    public bool isSpawned = false;
+    public bool isEnoughSpace = false;
+    public bool isSpaceChecked = false;
+
+    [Header("Gameobjects")]
+    public GameObject nextRoom;
+    public GameObject spaceChecktemp;
+
+    [Header("Delay for destroying used spawnpoints")]
+    public float waitTime = 1000f;
 
     void Start()
     {          
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        Invoke("Spawn", 0.1f); 
-        Destroy(gameObject, waitTime);  
+        Invoke("Spawn", 0.5f); 
+        //Destroy(gameObject, waitTime);  
     }
 
-    void Spawn()
+    public void Spawn()
     {
-        if (isSpawned == false /*&& templates.rooms.Count != roomsCount*/)
-        {      
+        if (isSpawned == false)
+        {
+            if (templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count == 15)
+            {
+                if(templates.isCheckPointRoomSpawned == false)
+                {
+                    SpecialRoomSpawn(templates.CheckPointRoom);
+                    templates.isCheckPointRoomSpawned = true;
+                }
+                else if(templates.isKeyRoomSpawned == false)
+                {
+                    SpecialRoomSpawn(templates.KeyRoom);
+                    templates.isKeyRoomSpawned = true;
+                }
+                else
+                {
+                    SpecialRoomSpawn(templates.TrapRoom);
+                }
+            }
+
             if (openingDirection == 1)
             {
-                rand = Random.Range(0, templates.bottomRooms.Length - 1);
-                Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
-                roomsCount++;
+                SelectRoom(templates.bottomRooms);
             }
             else if (openingDirection == 2)
             {
-                rand = Random.Range(0, templates.topRooms.Length - 1);
-                Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
-                roomsCount++;
+                SelectRoom(templates.topRooms);
             }
             else if (openingDirection == 3)
             {
-                rand = Random.Range(0, templates.leftRooms.Length - 1);
-                Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
-                roomsCount++;
+                SelectRoom(templates.leftRooms);
             }
             else if (openingDirection == 4)
             {
-                rand = Random.Range(0, templates.rightRooms.Length - 1);
-                Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
-                roomsCount++;
-            }               
+                SelectRoom(templates.rightRooms);
+            }
         }
         isSpawned = true;
     }
 
+    private void SelectRoom(GameObject[] roomList)
+    {
+        if (templates.SpecialRoomSpawn == false && templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count < 15)
+        {
+            rand = Random.Range(0, roomList.Length - 1);
+            nextRoom = Instantiate(roomList[rand], transform.position, roomList[rand].transform.rotation);
+            nextRoom.GetComponent<AddRoom>().lastIndex = this.gameObject.GetComponentInParent<AddRoom>().lastIndex;
+            nextRoom.GetComponent<AddRoom>().newRoom = new Node(new Vector3(nextRoom.transform.position.x, nextRoom.transform.position.y, nextRoom.transform.position.z), nextRoom.gameObject, this.gameObject.GetComponentInParent<AddRoom>().newRoom, this.gameObject.GetComponentInParent<AddRoom>().lastIndex);
+        }
+    }
+
+    private void SpecialRoomSpawn(GameObject specialRoom)
+    {
+        if (templates.prevRoom.transform.position.x < this.transform.position.x)
+            Instantiate(specialRoom, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), specialRoom.transform.rotation);
+        else if (templates.prevRoom.transform.position.x > this.transform.position.x)
+            Instantiate(specialRoom, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), specialRoom.transform.rotation);
+        else if (templates.transform.position.z < this.transform.position.z)
+            Instantiate(specialRoom, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), specialRoom.transform.rotation);
+        else if (templates.transform.position.z > this.transform.position.z)
+            Instantiate(specialRoom, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), specialRoom.transform.rotation);
+    }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("RoomSpawnPoint"))
+        if(other.CompareTag("Wall"))
         {
-            if (other.GetComponent<RoomSpawner>().isSpawned == false && isSpawned == true)
+            GameObject lastAddedRoom = templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex][templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count - 1].gObject;
+            RoomSpawner[] roomSpawner = lastAddedRoom.GetComponentsInChildren<RoomSpawner>();
+            foreach (RoomSpawner rs in roomSpawner)
             {
-                //GameObject last = templates.g.FindLast(this.gameObject.GetComponent<RoomSpawner>().Index);
-                //Destroy(last);
-                //templates.g.deleteLast(this.gameObject.GetComponent<RoomSpawner>().Index);
-                //last = templates.g.FindLast(this.gameObject.GetComponent<RoomSpawner>().Index);
-                isSpawned = true;
+                if (rs.nextRoom == null)
+                    rs.isSpawned = true;
+                else
+                {
+                    rs.isSpawned = false;
+                    Destroy(rs.nextRoom);
+                }       
+            }
+            foreach (RoomSpawner rs in roomSpawner)
+            {
+                if (rs.isSpawned == false)
+                    rs.Spawn();
             }
         }
-        else
-        {
-            isSpawned = true; //ez allitja meg a szobak egymasba spawnolasat.
-        }
-
-        //megall a spawnolas pedig nem kellene.
-
+        //if (other.CompareTag("RoomSpawnPoint"))
+        //{
+        //    if (other.GetComponent<RoomSpawner>().isSpawned == false && isSpawned == true)
+        //    {
+        //        isSpawned = true;
+        //    }
+        //}
+        //else
+        //{
+        //    isSpawned = true; //ez allitja meg a szobak egymasba spawnolasat.
+        //}
+        isSpawned = true;
+        //if(other.gameObject.tag == "SpaceCheck" && templates.g.roomLists[0].Count >= 25)
+        //{
+        //    isEnoughSpace = false;
+        //    Debug.Log("!!!!!!!!!SpaceCheck!!!!!!!! " + isEnoughSpace);
+        //    Destroy(spaceChecktemp);
+        //    isSpawned = false;
+        //    Invoke("Spawn", 0.5f);
+        //}
+        //else if(templates.g.roomLists[0].Count >= 25)
+        //{
+        //    isEnoughSpace = true;
+        //    Debug.Log("!!!!!!!!!SpaceCheck!!!!!!!! " + isEnoughSpace);
+        //    //Destroy(spaceChecktemp);
+        //}
+        //isSpaceChecked = true;
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 181365332514791995}
   - component: {fileID: 7505433849861358857}
   - component: {fileID: 6995157872359345370}
+  - component: {fileID: 3937344892073657973}
   - component: {fileID: 795988903967141396}
   m_Layer: 0
   m_Name: RoomSpawnPoint
@@ -61,7 +62,20 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.55, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!65 &3937344892073657973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215652734676303849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.55, z: 0.5}
+  m_Center: {x: 0.35, y: 0.25, z: 0}
 --- !u!114 &795988903967141396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +92,11 @@ MonoBehaviour:
   Index: 0
   isSpawned: 0
   isSpawnRoomSpawned: 0
+  isEnoughSpace: 0
+  isSpaceChecked: 0
   roomsCount: 0
+  currentRoom: {fileID: 0}
+  spaceChecktemp: {fileID: 0}
   waitTime: 4
 --- !u!1 &5176663612340681639
 GameObject:
@@ -93,6 +111,8 @@ GameObject:
   - component: {fileID: 8919100500297853651}
   - component: {fileID: -6387714264050023243}
   - component: {fileID: 7522315185846640057}
+  - component: {fileID: 3503166521515184122}
+  - component: {fileID: 1762839065696097578}
   m_Layer: 0
   m_Name: BottomRightDoorRoom
   m_TagString: Room
@@ -157,11 +177,24 @@ BoxCollider:
   m_GameObject: {fileID: 5176663612340681639}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.05, z: 0.5}
-  m_Center: {x: -0.7, y: 0.45, z: 0}
+  m_Size: {x: 0.55, y: 0.05, z: 0.5}
+  m_Center: {x: -0.55, y: 0.45, z: 0}
 --- !u!65 &7522315185846640057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176663612340681639}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.05, z: 0.55}
+  m_Center: {x: 0, y: 0.45, z: 0.55}
+--- !u!65 &3503166521515184122
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,8 +205,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.05, z: 0.6}
-  m_Center: {x: 0, y: 0.45, z: 0.7}
+  m_Size: {x: 0.15, y: 0.3, z: 0.5}
+  m_Center: {x: -0.55, y: 0.4, z: 0}
+--- !u!65 &1762839065696097578
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176663612340681639}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.3, z: 0.15}
+  m_Center: {x: 0, y: 0.4, z: 0.55}
 --- !u!1 &5375930732300652540
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +231,7 @@ GameObject:
   - component: {fileID: 4335293311859046240}
   - component: {fileID: 3013061737079913542}
   - component: {fileID: 8127899994059503541}
+  - component: {fileID: 266218998230765217}
   - component: {fileID: 500054125312444935}
   m_Layer: 0
   m_Name: RoomSpawnPoint (1)
@@ -235,7 +282,20 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.55, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!65 &266218998230765217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5375930732300652540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.55, z: 0.25}
+  m_Center: {x: 0, y: 0.25, z: -0.35}
 --- !u!114 &500054125312444935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +312,11 @@ MonoBehaviour:
   Index: 0
   isSpawned: 0
   isSpawnRoomSpawned: 0
+  isEnoughSpace: 0
+  isSpaceChecked: 0
   roomsCount: 0
+  currentRoom: {fileID: 0}
+  spaceChecktemp: {fileID: 0}
   waitTime: 4
 --- !u!1 &5590669974826891567
 GameObject:

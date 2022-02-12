@@ -1,0 +1,2 @@
+C:\Users\korne\OneDrive\Dokumentumok\GitHub\Szakdolgozat\Szakdolgozat\obj\Debug\Assembly-CSharp.csproj.AssemblyReference.cache
+C:\Users\korne\OneDrive\Dokumentumok\GitHub\Szakdolgozat\Szakdolgozat\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7490070681721731611}
   - component: {fileID: 2961803711982310181}
   - component: {fileID: 1916709466495867858}
+  - component: {fileID: 1482557206572270031}
+  - component: {fileID: 4771299492879587302}
   m_Layer: 0
   m_Name: BottomLeftDoorRoom
   m_TagString: Room
@@ -77,11 +79,24 @@ BoxCollider:
   m_GameObject: {fileID: 1365295052536472309}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.05, z: 0.6}
-  m_Center: {x: 0, y: 0.45, z: 0.7}
+  m_Size: {x: 0.5, y: 0.05, z: 0.55}
+  m_Center: {x: 0, y: 0.45, z: 0.55}
 --- !u!65 &1916709466495867858
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365295052536472309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.55, y: 0.05, z: 0.5}
+  m_Center: {x: 0.55, y: 0.45, z: 0}
+--- !u!65 &1482557206572270031
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,8 +107,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.05, z: 0.5}
-  m_Center: {x: 0.7, y: 0.45, z: 0}
+  m_Size: {x: 0.15, y: 0.3, z: 0.5}
+  m_Center: {x: 0.55, y: 0.4, z: 0}
+--- !u!65 &4771299492879587302
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365295052536472309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.3, z: 0.15}
+  m_Center: {x: 0, y: 0.4, z: 0.55}
 --- !u!1 &4758128773293889052
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +323,7 @@ GameObject:
   - component: {fileID: 7182545712740429802}
   - component: {fileID: 6361834055155111104}
   - component: {fileID: 7933354740756498572}
+  - component: {fileID: 6702888813660558340}
   - component: {fileID: 657118734596406582}
   m_Layer: 0
   m_Name: RoomSpawnPoint
@@ -345,7 +374,20 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.55, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!65 &6702888813660558340
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5668079627260367213}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.55, z: 0.5}
+  m_Center: {x: -0.35, y: 0.25, z: 0}
 --- !u!114 &657118734596406582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,7 +404,11 @@ MonoBehaviour:
   Index: 0
   isSpawned: 0
   isSpawnRoomSpawned: 0
+  isEnoughSpace: 0
+  isSpaceChecked: 0
   roomsCount: 0
+  currentRoom: {fileID: 0}
+  spaceChecktemp: {fileID: 0}
   waitTime: 4
 --- !u!1 &6775618209226142087
 GameObject:
@@ -376,6 +422,7 @@ GameObject:
   - component: {fileID: 3383375298041790008}
   - component: {fileID: 5899986596007568115}
   - component: {fileID: 4443968857722925778}
+  - component: {fileID: 6956593110869293756}
   m_Layer: 0
   m_Name: RoomSpawnPoint (1)
   m_TagString: RoomSpawnPoint
@@ -425,7 +472,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.55, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!114 &4443968857722925778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,8 +489,25 @@ MonoBehaviour:
   Index: 0
   isSpawned: 0
   isSpawnRoomSpawned: 0
+  isEnoughSpace: 0
+  isSpaceChecked: 0
   roomsCount: 0
+  currentRoom: {fileID: 0}
+  spaceChecktemp: {fileID: 0}
   waitTime: 4
+--- !u!65 &6956593110869293756
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6775618209226142087}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.55, z: 0.25}
+  m_Center: {x: 0, y: 0.25, z: -0.35}
 --- !u!1 &6883974027012875371
 GameObject:
   m_ObjectHideFlags: 0

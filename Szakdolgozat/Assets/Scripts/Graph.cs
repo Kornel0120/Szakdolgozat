@@ -5,22 +5,14 @@ using UnityEngine;
 public class Graph
 {
     public RoomTemplates templates;
-    //public static GameObject gObject;
-    //private static Vector3 roomPos;
-    public Node rootNode;/*= new Node(roomPos, gObject);*/
+    public Node rootNode;
     public List<List<Node>> roomLists = new List<List<Node>>();
     public List<bool> visited = new List<bool>();
     private int V;
     private int E;
-//templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         
     public Graph(int V)
     {
-        
-        //this.rootNode = new Node(new Vector3(templates.SpawnRoom.transform.position.x,
-        //                                     templates.SpawnRoom.transform.position.y,
-        //                                     templates.SpawnRoom.transform.position.z),
-        //                                     templates.SpawnRoom);
         this.V = V;
         this.E = 0;
         for (int i = 0; i < V; i++)
@@ -33,10 +25,10 @@ public class Graph
 
     public int getE() { return E; }
 
-    public void addEdge(Node newNode)
+    public void addEdge(Node newNode, int index)
     {
         if(newNode.gObject.tag != "SpawnRoom")
-            roomLists[newNode.listIndex].Add(newNode);
+            roomLists[index].Add(newNode);
         E++;
     }
 
@@ -108,65 +100,14 @@ public class Graph
         }
         return s;
     }
-
-    #region netes
-    //private int V;
-    //private int E;
-    //private List<List<GameObject>> adj = new List<List<GameObject>>();
-
-    //public Graph(int V0)
-    //{
-    //    V = V0;
-    //    E = 0;
-    //    for (int v = 0; v < V0; v++)
-    //        adj.Add(new List<GameObject>());
-    //}
-
-    //public int getV() { return V; }
-    //public int getE() { return E; }
-
-    //public void addEdge(Node v/*, Node w*/)
-    //{
-    //    int tempi = v.getIndex();
-    //    //GameObject tempg = w.getgObject();
-    //    adj[v.getIndex()].Add(v.getgObject());
-    //    /*adj[w.getIndex()].Add(v.getgObject());*/
-    //    E++;
-    //}
-
-    //public GameObject FindLast(int Index)
-    //{
-    //    GameObject last = adj[Index][adj[Index].Count];
-    //    return last;
-    //}
-
-    //public void deleteLast(int Index)
-    //{
-    //    adj[Index].RemoveAt(adj[Index].Count);
-    //}
-
-    //public string toStr()
-    //{
-    //    string s = V.ToString() + "vertices, " + E.ToString() + "edges\n";
-    //    for (int v = 0; v < V; v++)
-    //    {
-    //        s += v + ":";
-    //        foreach (GameObject w in this.adj[v])
-    //            s += w.ToString() + ", ";
-    //        s += '\n';
-    //    }
-    //    return s;
-    //}
-    #endregion
 }
 
 public class Node
 {
-    RoomTemplates templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
     public int listIndex;
     public Vector3 roomPos;
     public GameObject gObject;
-    private Node prevNode;
+    public Node prevNode;
 
     public Node(Vector3 roomPos, GameObject gObject)
     {
@@ -174,15 +115,12 @@ public class Node
         this.gObject = gObject;
     }
 
-    public Node( Vector3 roomPos ,GameObject gObject, Node prevNode)
+    public Node( Vector3 roomPos ,GameObject gObject, Node prevNode, int listIndex)
     {
         this.roomPos = roomPos;
         this.gObject = gObject;
         this.prevNode = prevNode;
-        if (this.prevNode.gObject.tag == "SpawnRoom")
-            listIndex = templates.isFirstRoomsGenerated.Count;
-        else if(!templates.invalidIndexes.Contains(listIndex))
-            listIndex = prevNode.listIndex;
+        this.listIndex = prevNode.listIndex;
     }
 
     public int getListIndex() { return listIndex; }

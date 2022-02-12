@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8096081275846151581}
   - component: {fileID: 8913675324691568705}
   - component: {fileID: 282813168370423889}
+  - component: {fileID: 3516678340790461140}
   - component: {fileID: 6932074050177189129}
   m_Layer: 0
   m_Name: RoomSpawnPoint (1)
@@ -61,7 +62,20 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.55, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!65 &3516678340790461140
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846375706949187491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.55, z: 0.5}
+  m_Center: {x: -0.35, y: 0.25, z: 0}
 --- !u!114 &6932074050177189129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +92,11 @@ MonoBehaviour:
   Index: 0
   isSpawned: 0
   isSpawnRoomSpawned: 0
+  isEnoughSpace: 0
+  isSpaceChecked: 0
   roomsCount: 0
+  currentRoom: {fileID: 0}
+  spaceChecktemp: {fileID: 0}
   waitTime: 4
 --- !u!1 &1425023389587744454
 GameObject:
@@ -186,6 +204,7 @@ GameObject:
   - component: {fileID: 5259592995648499989}
   - component: {fileID: 5302473789200475638}
   - component: {fileID: 7663206685163140071}
+  - component: {fileID: 4960863291544655192}
   - component: {fileID: 989743141368881392}
   m_Layer: 0
   m_Name: RoomSpawnPoint
@@ -236,7 +255,20 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.55, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!65 &4960863291544655192
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5467737743239047580}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.55, z: 0.25}
+  m_Center: {x: 0, y: 0.25, z: 0.35}
 --- !u!114 &989743141368881392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +285,11 @@ MonoBehaviour:
   Index: 0
   isSpawned: 0
   isSpawnRoomSpawned: 0
+  isEnoughSpace: 0
+  isSpaceChecked: 0
   roomsCount: 0
+  currentRoom: {fileID: 0}
+  spaceChecktemp: {fileID: 0}
   waitTime: 4
 --- !u!1 &6356957065482894904
 GameObject:
@@ -458,6 +494,8 @@ GameObject:
   - component: {fileID: 4642106299729420618}
   - component: {fileID: 7327498350212280576}
   - component: {fileID: 9193048486692754903}
+  - component: {fileID: 491502661829285551}
+  - component: {fileID: 4721229719236877924}
   m_Layer: 0
   m_Name: TopAndLeftDoor
   m_TagString: Room
@@ -522,11 +560,24 @@ BoxCollider:
   m_GameObject: {fileID: 7838100210186149481}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.05, z: 0.5}
-  m_Center: {x: 0.7, y: 0.45, z: 0}
+  m_Size: {x: 0.55, y: 0.05, z: 0.5}
+  m_Center: {x: 0.55, y: 0.45, z: 0}
 --- !u!65 &9193048486692754903
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838100210186149481}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.05, z: 0.55}
+  m_Center: {x: 0, y: 0.45, z: -0.55}
+--- !u!65 &491502661829285551
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -537,5 +588,18 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.05, z: 0.6}
-  m_Center: {x: 0, y: 0.45, z: -0.7}
+  m_Size: {x: 0.5, y: 0.3, z: 0.15}
+  m_Center: {x: 0, y: 0.4, z: -0.55}
+--- !u!65 &4721229719236877924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838100210186149481}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.3, z: 0.5}
+  m_Center: {x: 0.55, y: 0.4, z: 0}

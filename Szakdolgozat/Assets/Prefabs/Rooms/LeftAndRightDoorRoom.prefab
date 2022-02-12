@@ -298,6 +298,8 @@ GameObject:
   - component: {fileID: 5637523533824605438}
   - component: {fileID: 1419720494122569362}
   - component: {fileID: 8278935079544242037}
+  - component: {fileID: 4248331520002118053}
+  - component: {fileID: 5272616367030223252}
   m_Layer: 0
   m_Name: LeftAndRightDoorRoom
   m_TagString: Room
@@ -362,10 +364,10 @@ BoxCollider:
   m_GameObject: {fileID: 7993603705828318571}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.05, z: 1.25}
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Size: {x: 0.5, y: 0.05, z: 1.8}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!114 &8278935079544242037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +380,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4263ef4407f6f64086ce2cbdf073c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4248331520002118053
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7993603705828318571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.3, z: 0.15}
+  m_Center: {x: 0, y: 0.4, z: 0.6}
+--- !u!65 &5272616367030223252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7993603705828318571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.3, z: 0.15}
+  m_Center: {x: 0, y: 0.4, z: -0.6}
 --- !u!1 &8683687765027853930
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +417,7 @@ GameObject:
   - component: {fileID: 6188978528713392341}
   - component: {fileID: 852375128090947327}
   - component: {fileID: 2103932260546578468}
+  - component: {fileID: 579166272463238907}
   - component: {fileID: 872974437921784285}
   m_Layer: 0
   m_Name: RoomSpawnPoint
@@ -439,7 +468,20 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.55, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!65 &579166272463238907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683687765027853930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.55, z: 0.25}
+  m_Center: {x: 0, y: 0.25, z: 0.35}
 --- !u!114 &872974437921784285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,7 +498,11 @@ MonoBehaviour:
   Index: 0
   isSpawned: 0
   isSpawnRoomSpawned: 0
+  isEnoughSpace: 0
+  isSpaceChecked: 0
   roomsCount: 0
+  currentRoom: {fileID: 0}
+  spaceChecktemp: {fileID: 0}
   waitTime: 4
 --- !u!1 &9208602523532336818
 GameObject:
@@ -469,6 +515,7 @@ GameObject:
   - component: {fileID: 5910996937985388872}
   - component: {fileID: 1611078082464784909}
   - component: {fileID: 7459231452345837430}
+  - component: {fileID: 3962433017726485781}
   - component: {fileID: 8126472298557360695}
   m_Layer: 0
   m_Name: RoomSpawnPoint
@@ -519,7 +566,20 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.55, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!65 &3962433017726485781
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208602523532336818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.55, z: 0.25}
+  m_Center: {x: 0, y: 0.25, z: -0.35}
 --- !u!114 &8126472298557360695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,5 +596,9 @@ MonoBehaviour:
   Index: 0
   isSpawned: 0
   isSpawnRoomSpawned: 0
+  isEnoughSpace: 0
+  isSpaceChecked: 0
   roomsCount: 0
+  currentRoom: {fileID: 0}
+  spaceChecktemp: {fileID: 0}
   waitTime: 4

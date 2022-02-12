@@ -15,6 +15,13 @@ TagManager:
   - Collide
   - Wall
   - Room
+  - SpaceCheck
+  - Door
+  - CheckPointRoom
+  - PuzzleDoor
+  - Button
+  - TrapRoom
+  - Grabbable
   layers:
   - Default
   - TransparentFX

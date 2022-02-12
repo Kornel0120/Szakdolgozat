@@ -17,7 +17,7 @@ public class SpawnRoomSpawn : MonoBehaviour
     {
         if(isSpawnRoomSpawned == false)
         {
-            Instantiate(templates.SpawnRoom, new Vector3(0.5f, 0, 0.5f), Quaternion.identity);
+            templates.prevRoom = Instantiate(templates.SpawnRoom, new Vector3(0.5f, 0, 0.5f), Quaternion.identity);
         }
     }
 }

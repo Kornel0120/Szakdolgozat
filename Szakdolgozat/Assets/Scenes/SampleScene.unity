@@ -335,34 +335,38 @@ MonoBehaviour:
   - {fileID: 5176663612340681639, guid: 2a661d045f957ee4cb5a76916ad81331, type: 3}
   - {fileID: 239066797502950364, guid: a1a05d643c6f57d438fa1ddd005140b9, type: 3}
   - {fileID: 5984559517973300142, guid: 8129c717aa7410340b7664baebac18c5, type: 3}
-  - {fileID: 5984559517973300142, guid: 8129c717aa7410340b7664baebac18c5, type: 3}
+  - {fileID: 7993603705828318571, guid: 60ddd638cdaa47b48af0f0703ea54643, type: 3}
   topRooms:
   - {fileID: 7993603705828318571, guid: 60ddd638cdaa47b48af0f0703ea54643, type: 3}
   - {fileID: 7838100210186149481, guid: e70b024223d55ee4393ae1d372122a72, type: 3}
   - {fileID: 1302853546048038574, guid: f8c647a1b4cc44346bc91b48038bb5d3, type: 3}
   - {fileID: 6015762555811999139, guid: 0c68d32ea69792f49865249241ccfdab, type: 3}
   - {fileID: 2255476145097170140, guid: 8e7a1c9fa59bb44449dedbf7a3bb1ae2, type: 3}
-  - {fileID: 2255476145097170140, guid: 8e7a1c9fa59bb44449dedbf7a3bb1ae2, type: 3}
+  - {fileID: 7993603705828318571, guid: 60ddd638cdaa47b48af0f0703ea54643, type: 3}
   leftRooms:
   - {fileID: 7993603705828318571, guid: ce298cfdf49b26f4cbfaa96fcd850b71, type: 3}
   - {fileID: 7838100210186149481, guid: e70b024223d55ee4393ae1d372122a72, type: 3}
   - {fileID: 1365295052536472309, guid: 9b5b33912ed4cdb47986f8f6750d7318, type: 3}
   - {fileID: 4600006714118598573, guid: ca28ed63d80d8534284673241b0d36b5, type: 3}
   - {fileID: 4938166314791003293, guid: 38e794e538917c54bb39bf82e81850e6, type: 3}
+  - {fileID: 7993603705828318571, guid: ce298cfdf49b26f4cbfaa96fcd850b71, type: 3}
   rightRooms:
   - {fileID: 7993603705828318571, guid: ce298cfdf49b26f4cbfaa96fcd850b71, type: 3}
   - {fileID: 5176663612340681639, guid: 2a661d045f957ee4cb5a76916ad81331, type: 3}
   - {fileID: 1302853546048038574, guid: f8c647a1b4cc44346bc91b48038bb5d3, type: 3}
   - {fileID: 5019255588331884554, guid: e617829d7a642c54c981d2eb5e79b10d, type: 3}
   - {fileID: 1795349830687404149, guid: 24b041ee51a644b4d82142154e7cf2a6, type: 3}
+  - {fileID: 7993603705828318571, guid: ce298cfdf49b26f4cbfaa96fcd850b71, type: 3}
   SpawnRoom: {fileID: 6996029055488687564, guid: ccde98368db95b74babbb90cf8307123, type: 3}
   KeyRoom: {fileID: 2477093923600909799, guid: b1c2c618e5968bf4aadb1f7a2d57c032, type: 3}
   CheckPointRoom: {fileID: 2106583271663542790, guid: a314a6019ca02fb4aaf2aa77a934bb72, type: 3}
   TrapRoom: {fileID: 8697051537438855123, guid: 29c02b31c93b3234686e010c9b03ff3c, type: 3}
-  positions: []
-  lastIndex: 0
+  spaceCheck: {fileID: 0}
+  isCheckPointRoomSpawned: 0
+  isKeyRoomSpawned: 0
+  SpecialRoomSpawn: 0
   isFirstRoomsGenerated: 
-  invalidIndexes: 
+  prevRoom: {fileID: 0}
 --- !u!4 &1961903538
 Transform:
   m_ObjectHideFlags: 0

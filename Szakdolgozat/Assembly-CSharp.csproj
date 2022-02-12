@@ -53,17 +53,26 @@
     <UnityVersion>2020.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\PressurePlateActivated.cs" />
     <Compile Include="Assets\Scripts\WallCheck.cs" />
+    <Compile Include="Assets\Scripts\MoveCam.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovementRigidBody.cs" />
+    <Compile Include="Assets\Scripts\GenerableDirection.cs" />
     <Compile Include="Assets\Scripts\AddRoom.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\KeyPickUp.cs" />
+    <Compile Include="Assets\Scripts\OldMovement\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerSpawn.cs" />
-    <Compile Include="Assets\Scripts\MouseLook.cs" />
-    <Compile Include="Assets\Scripts\SpecialRoomSpawner.cs" />
+    <Compile Include="Assets\Scripts\CheckPointDoorOpen.cs" />
+    <Compile Include="Assets\Scripts\OldMovement\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\CamControll.cs" />
     <Compile Include="Assets\Scripts\Graph.cs" />
-    <Compile Include="Assets\Scripts\Route.cs" />
+    <Compile Include="Assets\Scripts\PuzzleCubeGrab.cs" />
+    <Compile Include="Assets\Scripts\PickUp.cs" />
     <Compile Include="Assets\Scripts\RoomTemplates.cs" />
     <Compile Include="Assets\Scripts\RoomSpawner.cs" />
     <Compile Include="Assets\Scripts\SpawnRoomSpawn.cs" />
+    <Compile Include="Assets\Scripts\TrapRoomDoorsOpen.cs" />
+    <Compile Include="Assets\Scripts\TrapRoomController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

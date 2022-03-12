@@ -22,6 +22,8 @@ public class RoomTemplates : MonoBehaviour
     public GameObject CheckPointRoom;
     [Header("Trap room")]
     public GameObject TrapRoom;
+    [Header("Finish Room")]
+    public GameObject FinishRoom;
     [Header("Spacecheck")]
     public GameObject spaceCheck;
 
@@ -32,6 +34,13 @@ public class RoomTemplates : MonoBehaviour
     public bool isCheckPointRoomSpawned = false;
     public bool isKeyRoomSpawned = false;
     public bool SpecialRoomSpawn = false;
+    public bool isFinishRoomSpawned = false;
+
+    public byte KeyPickedUp = 0;
+    public byte stageCounter = 0;
+    public byte resetCounter = 0;
+
+    public byte TrapRoomCounter = 0;
 
     [Header("Lists")]
     public List<bool> isFirstRoomsGenerated = new List<bool>();
@@ -39,7 +48,7 @@ public class RoomTemplates : MonoBehaviour
     public int SpecialRooms = 0;
 
     [Header("Graph")]
-    public Graph g = new Graph(4);
+    public Graph g = new Graph(10);
     public GameObject prevRoom;
 
 }

@@ -139,6 +139,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5119731f83d7a4aaaec3c6125803ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &687432279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687432276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a89ae6ae30a304c94473d8b25662a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surface: {fileID: 687432278}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,11 +395,17 @@ MonoBehaviour:
   KeyRoom: {fileID: 2477093923600909799, guid: b1c2c618e5968bf4aadb1f7a2d57c032, type: 3}
   CheckPointRoom: {fileID: 2106583271663542790, guid: a314a6019ca02fb4aaf2aa77a934bb72, type: 3}
   TrapRoom: {fileID: 8697051537438855123, guid: 29c02b31c93b3234686e010c9b03ff3c, type: 3}
+  FinishRoom: {fileID: 406800257303447906, guid: 48aa2ed02bfab2e438e538726d1b5c2e, type: 3}
   spaceCheck: {fileID: 1013816988607683126, guid: 7a3cf08f0dc0f99448f6e8b215a59435, type: 3}
   RoomQuantity: 15
   isCheckPointRoomSpawned: 0
   isKeyRoomSpawned: 0
   SpecialRoomSpawn: 0
+  isFinishRoomSpawned: 0
+  KeyPickedUp: 0
+  stageCounter: 0
+  resetCounter: 0
+  TrapRoomCounter: 0
   isFirstRoomsGenerated: 
   SpecialRooms: 0
   prevRoom: {fileID: 0}
@@ -428,7 +447,7 @@ PrefabInstance:
     - target: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 23800000, guid: d1e9b67b9ff9e164dbc0cdd68a35f496, type: 2}
     - target: {fileID: 2248982706945715526, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -476,6 +495,10 @@ PrefabInstance:
     - target: {fileID: 2248982706945715527, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
       propertyPath: m_Name
       value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248982706945715527, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}

@@ -71,11 +71,12 @@
     <Compile Include="Assets\Scripts\GuardMovement.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />
     <Compile Include="Assets\Scripts\RoomTemplates.cs" />
+    <Compile Include="Assets\Scripts\NavMeshSurfuceGenerator.cs" />
     <Compile Include="Assets\Scripts\RoomSpawner.cs" />
     <Compile Include="Assets\Scripts\SpawnRoomSpawn.cs" />
     <Compile Include="Assets\Scripts\TrapRoomDoorsOpen.cs" />
     <Compile Include="Assets\Scripts\TrapRoomController.cs" />
-    <Compile Include="Assets\Scripts\NavMeshSurfuceGenerator.cs" />
+    <Compile Include="Assets\Scripts\MeshBuild.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

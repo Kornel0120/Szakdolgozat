@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 1323581384910693889}
   m_Layer: 0
   m_Name: KeyRoom
-  m_TagString: Untagged
+  m_TagString: KeyRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2477093923600909799}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0a385750c597a54fac9d40f6a96e164, type: 3}
   m_Name: 

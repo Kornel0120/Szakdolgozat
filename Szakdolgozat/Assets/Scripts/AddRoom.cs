@@ -7,7 +7,8 @@ public class AddRoom : MonoBehaviour
     private SpawnRoomSpawn SRS;
     private RoomTemplates templates;
     public Node newRoom;
-    public int lastIndex; 
+    public int lastIndex;
+    private List<GameObject> checkedRooms = new List<GameObject>();
 
     //0 -> Zold oldal
     //1 -> Sarga oldal
@@ -46,9 +47,66 @@ public class AddRoom : MonoBehaviour
                 
             }
         }
+        else if(templates.stageCounter == 2 && templates.isFirstRoomsGenerated.Count < 7)
+        {
+            if(!this.gameObject.CompareTag("KeyRoom") && !this.gameObject.CompareTag("TrapRoom"))
+            {
+                for (int i = 0; i < templates.g.roomLists.Count; i++)
+                {
+                    if (templates.g.roomLists[i].Count == 0)
+                    {
+                        lastIndex = i;
+                        newRoom = new Node(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), this.gameObject, templates.g.rootNode, lastIndex);
+                        templates.isFirstRoomsGenerated.Add(true);
+                        templates.g.addEdge(newRoom, lastIndex);
+                        break;
+                    }
+
+                }
+            }
+        }
+        else if (templates.stageCounter == 3 && templates.isFirstRoomsGenerated.Count < 10)
+        {
+            if (!this.gameObject.CompareTag("KeyRoom") && !this.gameObject.CompareTag("TrapRoom"))
+            {
+                for (int i = 0; i < templates.g.roomLists.Count; i++)
+                {
+                    if (templates.g.roomLists[i].Count == 0)
+                    {
+                        lastIndex = i;
+                        newRoom = new Node(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), this.gameObject, templates.g.rootNode, lastIndex);
+                        templates.isFirstRoomsGenerated.Add(true);
+                        templates.g.addEdge(newRoom, lastIndex);
+                        break;
+                    }
+
+                }
+            }
+        }
         else
         {
             templates.g.addEdge(newRoom, lastIndex);
+        }
+
+        if(templates.stageCounter == 2 && templates.resetCounter == 0)
+        {
+            templates.TrapRoomCounter = 0;
+            templates.isKeyRoomSpawned = false;
+            templates.isCheckPointRoomSpawned = false;
+
+            templates.resetCounter++;
+
+            Debug.Log("TrapRoomCounter: " + templates.TrapRoomCounter + " isKeyRoomSpawned: " + templates.isKeyRoomSpawned + " isCheckPointRoomSpawned: " + templates.isCheckPointRoomSpawned + " isFirstGenerated Count: " + templates.isFirstRoomsGenerated.Count);
+        }
+        else if(templates.stageCounter == 3 && templates.resetCounter == 1)
+        {
+            templates.TrapRoomCounter = 0;
+            templates.isKeyRoomSpawned = false;
+            templates.isCheckPointRoomSpawned = false;
+
+            templates.resetCounter++;
+
+            Debug.Log("TrapRoomCounter: " + templates.TrapRoomCounter + " isKeyRoomSpawned: " + templates.isKeyRoomSpawned + " isCheckPointRoomSpawned: " + templates.isCheckPointRoomSpawned + " isFirstGenerated Count: " + templates.isFirstRoomsGenerated.Count);
         }
         Debug.Log(templates.g.toStr());
 
@@ -68,12 +126,17 @@ public class AddRoom : MonoBehaviour
                     else
                         rs.isSpawned = false;
                 }
-                Destroy(this.gameObject);
+                checkedRooms.Add(this.gameObject);
                 foreach (RoomSpawner rs in roomSpawner)
                 {
                     if (rs.isSpawned == false)
                         rs.Invoke("Spawn", 0.5f);
                 }
+                if(checkedRooms.Count == 1)
+                {
+                    Destroy(prevRoom.gameObject);
+                }
+                Destroy(this.gameObject);
             }
         }
     }

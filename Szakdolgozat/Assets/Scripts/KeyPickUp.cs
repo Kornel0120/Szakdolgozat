@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class KeyPickUp : MonoBehaviour
 {
+    private RoomTemplates templates;
+
+    void Start()
+    {
+        templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
+    }
+
     void KeyPickedUpByPlayer()
     {
         GameObject[] checkPointRooms = GameObject.FindGameObjectsWithTag("CheckPointRoom");
@@ -15,6 +22,7 @@ public class KeyPickUp : MonoBehaviour
                 CDO.enabled = true;
             }
         }
+        templates.KeyPickedUp++;
         Destroy(this.gameObject);
     }
 

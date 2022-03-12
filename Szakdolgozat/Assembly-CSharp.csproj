@@ -53,7 +53,9 @@
     <UnityVersion>2020.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\SpaceCheck.cs" />
     <Compile Include="Assets\Scripts\PressurePlateActivated.cs" />
+    <Compile Include="Assets\Scripts\GuardSpawn.cs" />
     <Compile Include="Assets\Scripts\WallCheck.cs" />
     <Compile Include="Assets\Scripts\MoveCam.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementRigidBody.cs" />
@@ -66,13 +68,14 @@
     <Compile Include="Assets\Scripts\OldMovement\MouseLook.cs" />
     <Compile Include="Assets\Scripts\CamControll.cs" />
     <Compile Include="Assets\Scripts\Graph.cs" />
-    <Compile Include="Assets\Scripts\PuzzleCubeGrab.cs" />
+    <Compile Include="Assets\Scripts\GuardMovement.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />
     <Compile Include="Assets\Scripts\RoomTemplates.cs" />
     <Compile Include="Assets\Scripts\RoomSpawner.cs" />
     <Compile Include="Assets\Scripts\SpawnRoomSpawn.cs" />
     <Compile Include="Assets\Scripts\TrapRoomDoorsOpen.cs" />
     <Compile Include="Assets\Scripts\TrapRoomController.cs" />
+    <Compile Include="Assets\Scripts\NavMeshSurfuceGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -674,6 +677,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{915EFACD-ACDD-12AD-7EDB-5D6E935BC928}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{277F9719-3E16-6E5C-EA10-7557CFB4FABE}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

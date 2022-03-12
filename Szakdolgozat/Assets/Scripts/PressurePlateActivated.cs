@@ -65,12 +65,4 @@ public class PressurePlateActivated : MonoBehaviour
             PressurePlateActivate();
         }
     }
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        isPressurePlateActivated = false;
-    //        PressurePlateActivate();
-    //    }
-    //}
 }

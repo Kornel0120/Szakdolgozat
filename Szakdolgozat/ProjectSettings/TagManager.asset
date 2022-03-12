@@ -22,6 +22,8 @@ TagManager:
   - Button
   - TrapRoom
   - Grabbable
+  - GrabbedObjectPosition
+  - Guard
   layers:
   - Default
   - TransparentFX

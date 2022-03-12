@@ -30,7 +30,6 @@ public class AddRoom : MonoBehaviour
                                                  templates.SpawnRoom.transform.position.z),
                                                  templates.SpawnRoom);
             SRS.isSpawnRoomSpawned = true;
-            Debug.Log("--------Spawn room ág---------------");
         }
         else if (templates.isFirstRoomsGenerated.Count < 4)
         {
@@ -42,7 +41,6 @@ public class AddRoom : MonoBehaviour
                     newRoom = new Node(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), this.gameObject, templates.g.rootNode, lastIndex);
                     templates.isFirstRoomsGenerated.Add(true);
                     templates.g.addEdge(newRoom, lastIndex);
-                    Debug.Log("------------Kisebb mint 4 ág-----------");
                     break;
                 }
                 
@@ -51,16 +49,8 @@ public class AddRoom : MonoBehaviour
         else
         {
             templates.g.addEdge(newRoom, lastIndex);
-            Debug.Log("------------Else ág-----------");
-            for (int i = 0; i < templates.isFirstRoomsGenerated.Count; i++)
-            {
-                Debug.Log(templates.isFirstRoomsGenerated[i] + ", " + i);
-            }
-            Debug.Log("this node: " + newRoom.gObject + "prevnode: "  + newRoom.prevNode.gObject);
         }
         Debug.Log(templates.g.toStr());
-        
-        //lastIndex = templates.lastIndex;
 
     }
     private void OnTriggerEnter(Collider other)
@@ -82,7 +72,7 @@ public class AddRoom : MonoBehaviour
                 foreach (RoomSpawner rs in roomSpawner)
                 {
                     if (rs.isSpawned == false)
-                        rs.Spawn();
+                        rs.Invoke("Spawn", 0.5f);
                 }
             }
         }

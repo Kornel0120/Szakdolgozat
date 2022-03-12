@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RoomTemplates : MonoBehaviour
 {
+    [Header("Parent GameObject")]
+    public GameObject Parent;
     [Header("Rooms with bottom opening")]
     public GameObject[] bottomRooms;
     [Header("Rooms with top opening")]
@@ -23,6 +25,9 @@ public class RoomTemplates : MonoBehaviour
     [Header("Spacecheck")]
     public GameObject spaceCheck;
 
+    [Header("Room quantity per branches")]
+    public int RoomQuantity = 15;
+
     [Header("Bools")]
     public bool isCheckPointRoomSpawned = false;
     public bool isKeyRoomSpawned = false;
@@ -30,6 +35,8 @@ public class RoomTemplates : MonoBehaviour
 
     [Header("Lists")]
     public List<bool> isFirstRoomsGenerated = new List<bool>();
+
+    public int SpecialRooms = 0;
 
     [Header("Graph")]
     public Graph g = new Graph(4);

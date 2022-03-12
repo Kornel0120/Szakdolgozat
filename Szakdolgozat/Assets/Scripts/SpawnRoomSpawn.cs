@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SpawnRoomSpawn : MonoBehaviour
 {
+    public NavMeshSurface surface;
+
     private RoomTemplates templates;
     public bool isSpawnRoomSpawned = false;
     
@@ -17,7 +20,8 @@ public class SpawnRoomSpawn : MonoBehaviour
     {
         if(isSpawnRoomSpawned == false)
         {
-            templates.prevRoom = Instantiate(templates.SpawnRoom, new Vector3(0.5f, 0, 0.5f), Quaternion.identity);
+            templates.prevRoom = Instantiate(templates.SpawnRoom, new Vector3(0.5f, 0, 0.5f), Quaternion.identity, templates.Parent.transform);
         }
+        surface.BuildNavMesh();
     }
 }

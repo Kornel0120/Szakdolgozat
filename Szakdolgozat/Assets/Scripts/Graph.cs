@@ -32,60 +32,6 @@ public class Graph
         E++;
     }
 
-    public Node DFS(int V, GameObject g)
-    {
-        if (visited[V] != true)
-        {
-            for (int i = 0; i < roomLists.Count; i++)
-            {
-                for (int j = 0; j < roomLists[i].Count; j++)
-                {
-                    if (roomLists[i][j].gObject == g)
-                    { 
-                        visited.Clear();
-                        return roomLists[i][j]; 
-                    }
-                        
-                }
-            }
-        }
-        visited[V] = true;
-        if (V < templates.g.roomLists.Count)
-            return DFS(V + 1, g);
-        else
-        {
-            visited.Clear();
-            return null;
-        }
-            
-    }
-
-
-    public void DeleteFromGraph(int V,Node g)
-    {
-        if (visited[V] != true)
-        {
-            for (int i = 0; i < roomLists.Count; i++)
-            {
-                for (int j = 0; j < roomLists[i].Count; j++)
-                {
-                    if (roomLists[i][j] == g)
-                       roomLists[i].Remove(roomLists[i][j]);
-                }
-            }
-        }
-        visited[V] = true;
-        if (V < templates.g.roomLists.Count)
-            DeleteFromGraph(V + 1, g);
-        else
-            Debug.Log("Nincs a gráfban!");
-    }
-
-    public Node findLast(int Index)
-    {
-        return roomLists[Index][roomLists[Index].Count];
-    }
-
     public string toStr()
     {
         string s = V.ToString() + "vertices, " + E.ToString() + "edges\n";

@@ -23,5 +23,6 @@ public class SpawnRoomSpawn : MonoBehaviour
             templates.prevRoom = Instantiate(templates.SpawnRoom, new Vector3(0.5f, 0, 0.5f), Quaternion.identity, templates.Parent.transform);
         }
         templates.stageCounter++;
+        templates.prevRoom.GetComponent<AddRoom>().stage = templates.stageCounter;
     }
 }

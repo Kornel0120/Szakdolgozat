@@ -9,6 +9,7 @@ public class AddRoom : MonoBehaviour
     public Node newRoom;
     public int lastIndex;
     private List<GameObject> checkedRooms = new List<GameObject>();
+    public byte stage = 0;
 
     //0 -> Zold oldal
     //1 -> Sarga oldal

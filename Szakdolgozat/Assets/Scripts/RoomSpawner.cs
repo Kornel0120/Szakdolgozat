@@ -89,20 +89,23 @@ public class RoomSpawner : MonoBehaviour
                 {
                     if(templates.stageCounter == 1 && templates.TrapRoomCounter == 2)
                     {
+                        templates.stageCounter++;
                         SpecialRoomSpawn(templates.CheckPointRoom);
                         templates.isCheckPointRoomSpawned = true;
-                        templates.stageCounter++;
+                        //nextRoom.GetComponent<AddRoom>().stage = templates.stageCounter;
                     }
                     else if (templates.stageCounter == 2 && templates.TrapRoomCounter == 1)
                     {
+                        templates.stageCounter++;
                         SpecialRoomSpawn(templates.CheckPointRoom);
                         templates.isCheckPointRoomSpawned = true;
-                        templates.stageCounter++;
+                        //nextRoom.GetComponent<AddRoom>().stage = templates.stageCounter;
                     }
                     else if(templates.stageCounter == 3 && templates.TrapRoomCounter == 1)
                     {
                         SpecialRoomSpawn(templates.FinishRoom);
                         templates.isFinishRoomSpawned = true;
+                        //nextRoom.GetComponent<AddRoom>().stage = templates.stageCounter;
                     }
                 }
             }
@@ -148,6 +151,7 @@ public class RoomSpawner : MonoBehaviour
         {
             nextRoom = Instantiate(roomList[0], transform.position, roomList[0].transform.rotation, templates.Parent.transform);
             CreateNode();
+            nextRoom.GetComponent<AddRoom>().stage = templates.stageCounter;
         }
     }
 
@@ -172,7 +176,6 @@ public class RoomSpawner : MonoBehaviour
                 else if (this.GetComponentInParent<AddRoom>().gameObject.transform.position.z > this.transform.position.z)
                 {
                     nextRoom = Instantiate(specialRoom, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - 1), this.gameObject.transform.rotation * Quaternion.Euler(0, 90, 0), templates.Parent.transform); //90f
-                    
                 }
             }
             else
@@ -194,7 +197,8 @@ public class RoomSpawner : MonoBehaviour
                     nextRoom = Instantiate(specialRoom, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - 1), this.gameObject.transform.rotation * Quaternion.Euler(0, 0, 0), templates.Parent.transform); //90f
                 }
             }
-            
+
+            nextRoom.GetComponent<AddRoom>().stage = templates.stageCounter;
             CreateNode();
             templates.SpecialRooms++;
             if (templates.SpecialRooms == 4 || templates.SpecialRooms == 7)
@@ -255,7 +259,7 @@ public class RoomSpawner : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(!other.gameObject.CompareTag("Player") || !other.gameObject.CompareTag("Guard"))
+        if(!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Guard"))
         {
             //if(this.gameObject.GetComponentInParent<AddRoom>().gameObject.name.Contains("SlopeUp"))
             //{

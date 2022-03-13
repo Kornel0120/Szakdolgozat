@@ -47,6 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2253968007415045993}
   player: {fileID: 3776697735387865930, guid: b886d5cf8a42c21478618e422f2bb42e, type: 3}
+  stage: 0
+  PatrolLocations: []
+  Index: 0
 --- !u!195 &2253968007415045993
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -56,7 +59,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5550794645980771944}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.1
+  m_Radius: 0.5
   m_Speed: 1.5
   m_Acceleration: 5
   avoidancePriority: 50

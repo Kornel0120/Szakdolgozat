@@ -5,42 +5,45 @@ using UnityEngine.AI;
 
 public class GuardMovement : MonoBehaviour
 {
+    private RoomTemplates templates;
+
     public NavMeshAgent agent;
     public GameObject player;
-    RaycastHit playerHit;
 
-    private Vector3 PatrolStartLocation;
-    private Vector3 PatrolEndLocation;
-    private bool agentAtStartLocation = false;
-    private bool agentAtEndLocation = false;
+    public byte stage;
+
+    public List<Vector3> PatrolLocations = new List<Vector3>();
+
+    public int Index = 0;
 
     private void Start()
     {
+        templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         player = GameObject.FindGameObjectWithTag("Player");
-        PatrolStartLocation = this.transform.position;
-        agentAtStartLocation = true;
-        PatrolEndLocation = FindEndLocation(this.transform.position, 5f);
+        PatrolLocations = FindEndLocation(stage);
+        agent.SetDestination(PatrolLocations[Index]);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (this.transform.position == PatrolStartLocation)
+        if (Vector3.Distance(agent.transform.position, PatrolLocations[Index]) < 1 && Index == PatrolLocations.Count - 1)
         {
-            agentAtStartLocation = true;
-            agentAtEndLocation = false;
+            Index = 0;
+            agent.SetDestination(PatrolLocations[Index]);
         }
-        else if (this.transform.position == PatrolEndLocation)
+        else if (Vector3.Distance(agent.transform.position, PatrolLocations[Index]) < 1)
         {
-            agentAtEndLocation = true;
-            agentAtStartLocation = false;
+            Index++;
+            agent.SetDestination(PatrolLocations[Index]);
         }
-
-        if (PlayerHit(this.transform.position, 1f) == true)
+        else if(PlayerHit(this.gameObject.transform.position, 1f) == true)
+        {
             agent.SetDestination(player.transform.position);
-        else if (agentAtStartLocation == true)
-            agent.SetDestination(PatrolEndLocation);
-        else if (agentAtEndLocation == false)
-            agent.SetDestination(PatrolStartLocation);
+        }
+        else if(PlayerHit(this.gameObject.transform.position, 1f) == false)
+        {
+            agent.SetDestination(PatrolLocations[Index]);
+        }
     }
 
     private bool PlayerHit(Vector3 center, float radius)
@@ -55,26 +58,40 @@ public class GuardMovement : MonoBehaviour
         return false;
     }
 
-    private Vector3 FindEndLocation(Vector3 center, float radius)
+    private List<Vector3> FindEndLocation(byte stage)
     {
-        Collider[] hitColliders = Physics.OverlapSphere(center, radius);
-        float FurthestDistance = radius;
-        Vector3 EndPosition = Vector3.zero;
+        List<Vector3> agentPatrolLocations = new List<Vector3>();
+        List<GameObject> TargetLocations = new List<GameObject>(GameObject.FindGameObjectsWithTag("TrapRoom"));
+        TargetLocations.AddRange(new List<GameObject>(GameObject.FindGameObjectsWithTag("KeyRoom")));
+        TargetLocations.AddRange(new List<GameObject>(GameObject.FindGameObjectsWithTag("CheckPointRoom")));
+        TargetLocations.Add(GameObject.FindGameObjectWithTag("FinishRoom"));
+        TargetLocations.Add(GameObject.FindGameObjectWithTag("SpawnRoom"));
 
-
-        foreach (Collider collider in hitColliders)
+        if (stage == 1)
         {
-            if (collider.gameObject.CompareTag("Room"))
+            foreach (GameObject gameObject in TargetLocations)
             {
-                float Distance = Vector3.Distance(this.transform.position, collider.gameObject.transform.position);
-                if (Distance > FurthestDistance)
-                {
-                    EndPosition = collider.transform.position;
-                    FurthestDistance = Distance;
-                }
+                if (gameObject.GetComponent<AddRoom>().stage == stage)
+                    agentPatrolLocations.Add(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.05000001f, gameObject.transform.position.z));
+            }
+        }
+        else if(stage == 2)
+        {
+            foreach (GameObject gameObject in TargetLocations)
+            {
+                if (gameObject.GetComponent<AddRoom>().stage == stage)
+                    agentPatrolLocations.Add(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.05000001f, gameObject.transform.position.z));
+            }
+        }
+        else if(stage == 3)
+        {
+            foreach (GameObject gameObject in TargetLocations)
+            {
+                if (gameObject.GetComponent<AddRoom>().stage == stage)
+                    agentPatrolLocations.Add(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.05000001f, gameObject.transform.position.z));
             }
         }
 
-        return EndPosition;
+        return agentPatrolLocations;
     }
 }

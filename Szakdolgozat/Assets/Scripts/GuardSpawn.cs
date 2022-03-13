@@ -5,6 +5,7 @@ using UnityEngine;
 public class GuardSpawn : MonoBehaviour
 {
     public GameObject guard;
+    public List<GameObject> targetObjects = new List<GameObject>();
 
     void Start()
     {
@@ -13,6 +14,7 @@ public class GuardSpawn : MonoBehaviour
 
     void SpawnGuard()
     {
-        Instantiate(guard, this.transform.position, this.transform.rotation);
+        GameObject temp = Instantiate(guard, this.transform.position, this.transform.rotation);
+        temp.GetComponent<GuardMovement>().stage = this.GetComponent<AddRoom>().stage;
     }
 }

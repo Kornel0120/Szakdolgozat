@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 1322294478700916909}
   - component: {fileID: 1623382119451861800}
   - component: {fileID: 7490070681721731611}
-  - component: {fileID: 2961803711982310181}
-  - component: {fileID: 1916709466495867858}
   - component: {fileID: 1482557206572270031}
   - component: {fileID: 4771299492879587302}
+  - component: {fileID: 2042904582263090241}
   m_Layer: 0
   m_Name: BottomLeftDoorRoom
   m_TagString: Room
@@ -30,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365295052536472309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4752300389327096366}
@@ -53,8 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d51bb98fb9a354daf05f918329f5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastIndex: 0
+  lastIndex: 3
   stage: 0
+  nextRoom: {fileID: 0}
 --- !u!54 &7490070681721731611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -71,32 +71,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2961803711982310181
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365295052536472309}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.05, z: 0.55}
-  m_Center: {x: 0, y: 0.45, z: 0.55}
---- !u!65 &1916709466495867858
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365295052536472309}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.05, z: 0.5}
-  m_Center: {x: 0.55, y: 0.45, z: 0}
 --- !u!65 &1482557206572270031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -109,7 +83,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.3, z: 0.5}
-  m_Center: {x: 0.55, y: 0.4, z: 0}
+  m_Center: {x: 0.6, y: 0.4, z: 0}
 --- !u!65 &4771299492879587302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -122,7 +96,24 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.3, z: 0.15}
-  m_Center: {x: 0, y: 0.4, z: 0.55}
+  m_Center: {x: 0, y: 0.4, z: 0.6}
+--- !u!114 &2042904582263090241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365295052536472309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbfab967cfe6774f8a95e2933757882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevSpawners: []
+  isSpawn: 0
+  isEnoughSpace: 
+  falseSpace: 0
+  prevRoomGameObject: {fileID: 0}
 --- !u!1 &4758128773293889052
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 4758128773293889052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.3, z: -0.45}
-  m_LocalScale: {x: 1, y: 0.5, z: 0.099999994}
+  m_LocalScale: {x: 1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1322294478700916909}
   m_RootOrder: 2
@@ -390,9 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7182545712740429802}
-  - component: {fileID: 6361834055155111104}
   - component: {fileID: 7933354740756498572}
-  - component: {fileID: 6702888813660558340}
   - component: {fileID: 657118734596406582}
   m_Layer: 0
   m_Name: RoomSpawnPoint
@@ -415,36 +404,7 @@ Transform:
   m_Father: {fileID: 1322294478700916909}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6361834055155111104
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5668079627260367213}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &7933354740756498572
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5668079627260367213}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.55, z: 0.5}
-  m_Center: {x: 0, y: 0.25, z: 0}
---- !u!65 &6702888813660558340
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -455,8 +415,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.55, z: 0.5}
-  m_Center: {x: -0.35, y: 0.25, z: 0}
+  m_Size: {x: 0.1, y: 0.65, z: 0.5}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!114 &657118734596406582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,17 +431,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 4
   ExtraRoomQuantity: 0
+  spawnedRoomsIndex: 
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
-  isEnoughSpace: 0
-  isSpaceChecked: 0
+  isEnoughSpaceForSpecialRoom: 0
+  isEnoughSpaceForRoom: 0
+  isSpaceCheckedForSpecialRoom: 0
+  isSpaceCheckedForRoom: 0
+  isStepBack: 0
+  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
   spaceChecktemp: {fileID: 0}
   waitTime: 4
+  temp: {x: 0, y: 0, z: 0}
 --- !u!1 &6775618209226142087
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,10 +457,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4677431540860696006}
-  - component: {fileID: 3383375298041790008}
   - component: {fileID: 5899986596007568115}
   - component: {fileID: 4443968857722925778}
-  - component: {fileID: 6956593110869293756}
   m_Layer: 0
   m_Name: RoomSpawnPoint (1)
   m_TagString: RoomSpawnPoint
@@ -516,22 +480,6 @@ Transform:
   m_Father: {fileID: 1322294478700916909}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3383375298041790008
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6775618209226142087}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5899986596007568115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -541,10 +489,10 @@ BoxCollider:
   m_GameObject: {fileID: 6775618209226142087}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.55, z: 0.1}
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Size: {x: 0.5, y: 0.65, z: 0.1}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!114 &4443968857722925778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,30 +507,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 2
   ExtraRoomQuantity: 0
+  spawnedRoomsIndex: 
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
-  isEnoughSpace: 0
-  isSpaceChecked: 0
+  isEnoughSpaceForSpecialRoom: 0
+  isEnoughSpaceForRoom: 0
+  isSpaceCheckedForSpecialRoom: 0
+  isSpaceCheckedForRoom: 0
+  isStepBack: 0
+  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
   spaceChecktemp: {fileID: 0}
   waitTime: 4
---- !u!65 &6956593110869293756
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6775618209226142087}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.55, z: 0.25}
-  m_Center: {x: 0, y: 0.25, z: -0.35}
+  temp: {x: 0, y: 0, z: 0}
 --- !u!1 &6883974027012875371
 GameObject:
   m_ObjectHideFlags: 0

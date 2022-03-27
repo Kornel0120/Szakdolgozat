@@ -47,12 +47,12 @@ public class SpaceCheck : MonoBehaviour
                     {
                         if (rs.nextRoom != null && rs.nextRoom.gameObject.tag == "SpaceCheck")
                         {
-                            rs.isEnoughSpace = Physics.CheckSphere(this.transform.position, 2f, groundMask);
-                            rs.isSpawned = false;
-                            if(rs.isEnoughSpace == false)
-                                rs.ExtraRoomQuantity += 1;
-                            rs.Spawn();
-                            this.gameObject.GetComponent<SpaceCheck>().enabled = false;
+                            //rs.isEnoughSpace = Physics.CheckSphere(this.transform.position, 2f, groundMask);
+                            //rs.isSpawned = false;
+                            //if(rs.isEnoughSpace == false)
+                            //    rs.ExtraRoomQuantity += 1;
+                            //rs.Spawn();
+                            //this.gameObject.GetComponent<SpaceCheck>().enabled = false;
                         }
                     }
                     break;
@@ -63,7 +63,7 @@ public class SpaceCheck : MonoBehaviour
 
     private void SpawnCall()
     {
-        Debug.Log("isEnoughSpace = " + correctRoomSpawner.isEnoughSpace + " isSpawned = " + correctRoomSpawner.isSpawned + " GameObject: " + correctRoomSpawner.GetComponentInParent<AddRoom>().gameObject);
+        //Debug.Log("isEnoughSpace = " + correctRoomSpawner.isEnoughSpace + " isSpawned = " + correctRoomSpawner.isSpawned + " GameObject: " + correctRoomSpawner.GetComponentInParent<AddRoom>().gameObject);
         correctRoomSpawner.Spawn();
     }
 

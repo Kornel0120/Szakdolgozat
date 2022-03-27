@@ -10,6 +10,7 @@ public class AddRoom : MonoBehaviour
     public int lastIndex;
     private List<GameObject> checkedRooms = new List<GameObject>();
     public byte stage = 0;
+    public GameObject nextRoom;
 
     //0 -> Zold oldal
     //1 -> Sarga oldal
@@ -114,31 +115,42 @@ public class AddRoom : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("RoomSpawnPoint") && !other.CompareTag("Player"))
-        {
-            if (other.CompareTag("Wall") || other.CompareTag("Ground"))
-            {
-                GameObject prevRoom = templates.g.roomLists[lastIndex][templates.g.roomLists[lastIndex].Count - 1].gObject;
-                RoomSpawner[] roomSpawner = prevRoom.GetComponentsInChildren<RoomSpawner>();
-                foreach (RoomSpawner rs in roomSpawner)
-                {
-                    if (rs.nextRoom != gameObject)
-                        rs.isSpawned = true;
-                    else
-                        rs.isSpawned = false;
-                }
-                checkedRooms.Add(this.gameObject);
-                foreach (RoomSpawner rs in roomSpawner)
-                {
-                    if (rs.isSpawned == false)
-                        rs.Invoke("Spawn", 0.5f);
-                }
-                if(checkedRooms.Count == 1)
-                {
-                    Destroy(prevRoom.gameObject);
-                }
-                Destroy(this.gameObject);
-            }
-        }
+        //if (!other.CompareTag("RoomSpawnPoint") && !other.CompareTag("Player"))
+        //{
+        //    if (other.CompareTag("Wall") || other.CompareTag("Ground"))
+        //    {
+        //        Debug.Log("AddRoom Ontrigger: " + other.gameObject.name + " GameObject name: " + this.GetComponentInParent<AddRoom>().gameObject.name);
+        //        GameObject prevRoom = templates.g.roomLists[lastIndex][templates.g.roomLists[lastIndex].Count - 1].gObject;
+        //        if(prevRoom != null)
+        //        {
+        //            RoomSpawner[] roomSpawner = prevRoom.GetComponentsInChildren<RoomSpawner>();
+        //            foreach (RoomSpawner rs in roomSpawner)
+        //            {
+        //                if (rs.nextRoom != gameObject)
+        //                    rs.isSpawned = true;
+        //                else
+        //                {
+        //                    rs.isSpawned = false;
+        //                    rs.isStepBack = true;
+        //                    rs.Invoke("DeleteNextRoom", 0.1f);
+        //                }
+                            
+        //            }
+        //        }
+                
+        //        //checkedRooms.Add(this.gameObject);
+        //        //foreach (RoomSpawner rs in roomSpawner)
+        //        //{
+        //        //    if (rs.isSpawned == false)
+        //        //        rs.Invoke("Spawn", 0.1f);
+        //        //}
+        //        //if (checkedRooms.Count == 1)
+        //        //{
+        //        //    Destroy(prevRoom.gameObject);
+        //        //    checkedRooms.RemoveAt(0);
+        //        //}
+        //        //Destroy(this.gameObject);
+        //    }
+        //}
     }
 }

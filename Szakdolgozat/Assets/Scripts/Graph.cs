@@ -34,7 +34,7 @@ public class Graph
 
     public string toStr()
     {
-        string s = V.ToString() + "vertices, " + E.ToString() + "edges\n";
+        string s = V.ToString() + "ág, " + E.ToString() + "szoba\n";
         for (int v = 0; v < V; v++)
         {
             s += v + ":";

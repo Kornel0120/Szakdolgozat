@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2792095580778199657}
-  - component: {fileID: 3206187450766704559}
   - component: {fileID: 5361954959184022630}
   - component: {fileID: 7815359605472114676}
   m_Layer: 0
@@ -33,22 +32,6 @@ Transform:
   m_Father: {fileID: 6343636174719641582}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3206187450766704559
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656270562343397360}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5361954959184022630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58,7 +41,7 @@ BoxCollider:
   m_GameObject: {fileID: 656270562343397360}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -76,17 +59,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 4
   ExtraRoomQuantity: 0
+  spawnedRoomsIndex: 
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
-  isEnoughSpace: 0
-  isSpaceChecked: 0
+  isEnoughSpaceForSpecialRoom: 0
+  isEnoughSpaceForRoom: 0
+  isSpaceCheckedForSpecialRoom: 0
+  isSpaceCheckedForRoom: 0
+  isStepBack: 0
+  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
   spaceChecktemp: {fileID: 0}
   waitTime: 4
+  temp: {x: 0, y: 0, z: 0}
 --- !u!1 &682644396212484475
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +859,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2549143347237719086}
-  - component: {fileID: 5268202671460556840}
   - component: {fileID: 2436742502159566101}
   - component: {fileID: 2994952341633895773}
   m_Layer: 0
@@ -894,22 +882,6 @@ Transform:
   m_Father: {fileID: 6343636174719641582}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &5268202671460556840
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2507853398325615984}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &2436742502159566101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -919,7 +891,7 @@ BoxCollider:
   m_GameObject: {fileID: 2507853398325615984}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -937,17 +909,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 3
   ExtraRoomQuantity: 0
+  spawnedRoomsIndex: 
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
-  isEnoughSpace: 0
-  isSpaceChecked: 0
+  isEnoughSpaceForSpecialRoom: 0
+  isEnoughSpaceForRoom: 0
+  isSpaceCheckedForSpecialRoom: 0
+  isSpaceCheckedForRoom: 0
+  isStepBack: 0
+  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
   spaceChecktemp: {fileID: 0}
   waitTime: 4
+  temp: {x: 0, y: 0, z: 0}
 --- !u!1 &2889909548920903966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,7 +1254,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8468229266856311826}
-  - component: {fileID: 6387700713093193770}
   - component: {fileID: 3902960212402407291}
   - component: {fileID: 633521132447210433}
   m_Layer: 0
@@ -1300,22 +1277,6 @@ Transform:
   m_Father: {fileID: 6343636174719641582}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6387700713093193770
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694141873934913774}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &3902960212402407291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,17 +1291,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 2
   ExtraRoomQuantity: 0
+  spawnedRoomsIndex: 
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
-  isEnoughSpace: 0
-  isSpaceChecked: 0
+  isEnoughSpaceForSpecialRoom: 0
+  isEnoughSpaceForRoom: 0
+  isSpaceCheckedForSpecialRoom: 0
+  isSpaceCheckedForRoom: 0
+  isStepBack: 0
+  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
   spaceChecktemp: {fileID: 0}
   waitTime: 4
+  temp: {x: 0, y: 0, z: 0}
 --- !u!65 &633521132447210433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1350,7 +1317,7 @@ BoxCollider:
   m_GameObject: {fileID: 3694141873934913774}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2260,7 +2227,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3716751008762390171}
-  - component: {fileID: 7692507289375391480}
   - component: {fileID: 6491301374269331368}
   - component: {fileID: 3434758891169737887}
   m_Layer: 0
@@ -2284,22 +2250,6 @@ Transform:
   m_Father: {fileID: 6343636174719641582}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7692507289375391480
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6236051944042411209}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6491301374269331368
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2309,7 +2259,7 @@ BoxCollider:
   m_GameObject: {fileID: 6236051944042411209}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2327,17 +2277,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 1
   ExtraRoomQuantity: 0
+  spawnedRoomsIndex: 
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
-  isEnoughSpace: 0
-  isSpaceChecked: 0
+  isEnoughSpaceForSpecialRoom: 0
+  isEnoughSpaceForRoom: 0
+  isSpaceCheckedForSpecialRoom: 0
+  isSpaceCheckedForRoom: 0
+  isStepBack: 0
+  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
   spaceChecktemp: {fileID: 0}
   waitTime: 4
+  temp: {x: 0, y: 0, z: 0}
 --- !u!1 &6335970412539919248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,6 +2529,7 @@ GameObject:
   - component: {fileID: 6343636174719641582}
   - component: {fileID: 7040234094144688823}
   - component: {fileID: 3139281707902095276}
+  - component: {fileID: 5247820902109133195}
   m_Layer: 0
   m_Name: Spawn Room
   m_TagString: SpawnRoom
@@ -2634,6 +2591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastIndex: 0
   stage: 0
+  nextRoom: {fileID: 0}
 --- !u!114 &3139281707902095276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2648,6 +2606,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guard: {fileID: 5550794645980771944, guid: 2dd7ca0f1c147584097da1a1e8da60ad, type: 3}
   targetObjects: []
+--- !u!54 &5247820902109133195
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6996029055488687564}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8870042430777676948
 GameObject:
   m_ObjectHideFlags: 0

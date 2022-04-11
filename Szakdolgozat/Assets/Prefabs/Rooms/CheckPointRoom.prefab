@@ -233,7 +233,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446171830901621084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59fed124ce096534184171cac3a4a683, type: 3}
   m_Name: 
@@ -1476,7 +1476,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3569507495456898480}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59fed124ce096534184171cac3a4a683, type: 3}
   m_Name: 
@@ -2083,7 +2083,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5403223856426404965}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59fed124ce096534184171cac3a4a683, type: 3}
   m_Name: 
@@ -2561,7 +2561,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6612684651051054003}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59fed124ce096534184171cac3a4a683, type: 3}
   m_Name: 
@@ -2741,17 +2741,14 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
   isEnoughSpaceForSpecialRoom: 0
   isEnoughSpaceForRoom: 0
   isSpaceCheckedForSpecialRoom: 0
   isSpaceCheckedForRoom: 0
   isStepBack: 0
-  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
-  spaceChecktemp: {fileID: 0}
   waitTime: 4
   temp: {x: 0, y: 0, z: 0}
 --- !u!114 &2609774082335097513
@@ -3076,17 +3073,14 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
   isEnoughSpaceForSpecialRoom: 0
   isEnoughSpaceForRoom: 0
   isSpaceCheckedForSpecialRoom: 0
   isSpaceCheckedForRoom: 0
   isStepBack: 0
-  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
-  spaceChecktemp: {fileID: 0}
   waitTime: 4
   temp: {x: 0, y: 0, z: 0}
 --- !u!65 &6957762203581885592
@@ -3403,17 +3397,14 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
   isEnoughSpaceForSpecialRoom: 0
   isEnoughSpaceForRoom: 0
   isSpaceCheckedForSpecialRoom: 0
   isSpaceCheckedForRoom: 0
   isStepBack: 0
-  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
-  spaceChecktemp: {fileID: 0}
   waitTime: 4
   temp: {x: 0, y: 0, z: 0}
 --- !u!114 &3121220503470191693
@@ -3493,17 +3484,14 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
   isEnoughSpaceForSpecialRoom: 0
   isEnoughSpaceForRoom: 0
   isSpaceCheckedForSpecialRoom: 0
   isSpaceCheckedForRoom: 0
   isStepBack: 0
-  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
-  spaceChecktemp: {fileID: 0}
   waitTime: 4
   temp: {x: 0, y: 0, z: 0}
 --- !u!114 &7336826964020599235

@@ -13,13 +13,14 @@ public class RoomSpawner : MonoBehaviour
 
     private RoomTemplates templates;
     private int rand = -1;
+    private int deletedRoomIndex = -1;
     public int ExtraRoomQuantity = 0;
 
     public List<int> spawnedRoomsIndex = new List<int>();
 
     [SerializeField] LayerMask groundMask;
 
-    public NavMeshSurface surface;
+    //public NavMeshSurface surface;
 
     [Header("Bools")]
     public bool isSpawned = false;
@@ -32,7 +33,6 @@ public class RoomSpawner : MonoBehaviour
     [Header("Gameobjects")]
     public GameObject nextRoom;
     public GameObject prevRoom = null;
-    public GameObject spaceChecktemp;
 
     [Header("Delay for destroying used spawnpoints")]
     public float waitTime = 1000f;
@@ -46,22 +46,17 @@ public class RoomSpawner : MonoBehaviour
 
     public void Spawn()
     {
-        //if(!this.GetComponentInParent<AddRoom>().CompareTag("SpawnRoom") && this.GetComponentInParent<DeleteRoom>().isEnoughSpace.Count < this.GetComponentInParent<AddRoom>().GetComponentsInChildren<RoomSpawner>().Length)
         EnoughSpaceForRoom();
 
         if (isEnoughSpaceForRoom == true && isSpawned == false)
         {
-            if (templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count == templates.RoomQuantity && templates.isKeyRoomSpawned == false && templates.stageCounter == 1 && templates.TrapRoomCounter != 2)
+            if(templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count == templates.RoomQuantity && (templates.isKeyRoomSpawned == true && templates.stageCounter == 1 && templates.TrapRoomCounter == 2 || templates.isKeyRoomSpawned == false && (templates.stageCounter == 2 || templates.stageCounter == 3) && templates.TrapRoomCounter == 1))
             {
-                EnoughShapceForSpecialRoom(1f);
+                EnoughShapceForSpecialRoom(5f, true);
             }
-            else if(templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count == templates.RoomQuantity && templates.isKeyRoomSpawned == false && (templates.stageCounter == 2 || templates.stageCounter == 3) && templates.TrapRoomCounter == 0)
+            else if (templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count == templates.RoomQuantity)
             {
-                EnoughShapceForSpecialRoom(1f);
-            }
-            else if(templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count == templates.RoomQuantity)
-            {
-                EnoughShapceForSpecialRoom(3f);
+                EnoughShapceForSpecialRoom(1f, false);
             }
 
             if (isEnoughSpaceForSpecialRoom == true && templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count == templates.RoomQuantity + ExtraRoomQuantity)
@@ -107,25 +102,13 @@ public class RoomSpawner : MonoBehaviour
             }
 
             if (openingDirection == 1)
-            {
                 SelectRoom(templates.bottomRooms);
-                //SpecialRoomRotationTest(templates.bottomRooms);
-            }
             else if (openingDirection == 2)
-            {
                 SelectRoom(templates.topRooms);
-                //SpecialRoomRotationTest(templates.topRooms);
-            }
             else if (openingDirection == 3)
-            {
                 SelectRoom(templates.leftRooms);
-                //SpecialRoomRotationTest(templates.leftRooms);
-            }
             else if (openingDirection == 4)
-            {
                 SelectRoom(templates.rightRooms);
-                //SpecialRoomRotationTest(templates.rightRooms);
-            }
         }
 
         isSpawned = true;
@@ -150,7 +133,6 @@ public class RoomSpawner : MonoBehaviour
             }
         }
         
-
         if (isEnoughSpaceForSpecialRoom == false && templates.SpecialRoomSpawn == false && templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count < templates.RoomQuantity + ExtraRoomQuantity)
         {
             if(rand == -1)
@@ -172,12 +154,9 @@ public class RoomSpawner : MonoBehaviour
                             rand = i;
                         else
                             spawnedRoomsIndex.Add(i);
-                    }
-                        
-                        
+                    }        
                 }
             }
-
 
             if (!this.spawnedRoomsIndex.Contains(rand))
             {
@@ -202,33 +181,6 @@ public class RoomSpawner : MonoBehaviour
             else if (this.spawnedRoomsIndex.Contains(rand) && this.spawnedRoomsIndex.Count >= roomList.Length)
             {
                 Debug.Log("SelectRoom this.spawnedRoomsIndex.Contains(rand) && this.spawnedRoomsIndex.Count >= roomList.Length ág");
-                StepBack();
-            }
-        }
-    }
-
-    private void SpecialRoomRotationTest(GameObject[] roomList)
-    {
-        if (isEnoughSpaceForSpecialRoom == false && templates.SpecialRoomSpawn == false && templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count < templates.RoomQuantity)
-        {
-            if (!spawnedRoomsIndex.Contains(0))
-            {
-                nextRoom = Instantiate(roomList[0], transform.position, roomList[0].transform.rotation, templates.Parent.transform);
-                CreateNode(nextRoom);
-                //Instantiate(nextRoom.gameObject, nextRoom.transform.position, nextRoom.transform.rotation, templates.Parent.transform);
-                nextRoom.GetComponent<AddRoom>().stage = templates.stageCounter;
-                foreach (RoomSpawner rs in nextRoom.GetComponentsInChildren<RoomSpawner>())
-                {
-                    rs.prevRoom = this.gameObject.GetComponentInParent<AddRoom>().gameObject;
-                }
-            }
-            else if (spawnedRoomsIndex.Contains(0) && spawnedRoomsIndex.Count < roomList.Length)
-            {
-                Debug.Log("Már spawnolt!");
-            }
-            else if (spawnedRoomsIndex.Contains(0) && spawnedRoomsIndex.Count >= roomList.Length)
-            {
-                Debug.Log("StepBack");
                 StepBack();
             }
         }
@@ -269,135 +221,63 @@ public class RoomSpawner : MonoBehaviour
         }
     }
 
-    private GameObject CreateNode(GameObject nextGameObject)
+    private void CreateNode(GameObject nextGameObject)
     {
         nextGameObject.GetComponent<AddRoom>().lastIndex = this.gameObject.GetComponentInParent<AddRoom>().lastIndex;
         if(this.gameObject.GetComponentInParent<AddRoom>().gameObject.CompareTag("SpawnRoom"))
         {
-            nextGameObject.GetComponent<AddRoom>().newRoom = new Node(new Vector3(nextGameObject.transform.position.x, nextGameObject.transform.position.y, nextGameObject.transform.position.z),
+            if(deletedRoomIndex == -1)
+                nextGameObject.GetComponent<AddRoom>().newRoom = new Node(new Vector3(nextGameObject.transform.position.x, nextGameObject.transform.position.y, nextGameObject.transform.position.z),
                                                                nextGameObject, this.templates.g.rootNode,
                                                                this.gameObject.GetComponentInParent<AddRoom>().lastIndex);
+            else
+                nextGameObject.GetComponent<AddRoom>().newRoom = new Node(new Vector3(nextGameObject.transform.position.x, nextGameObject.transform.position.y, nextGameObject.transform.position.z),
+                                                               nextGameObject, this.templates.g.rootNode,
+                                                               deletedRoomIndex);
         }
         else
         {
-            nextGameObject.GetComponent<AddRoom>().newRoom = new Node(new Vector3(nextGameObject.transform.position.x, nextGameObject.transform.position.y, nextGameObject.transform.position.z),
+            if (deletedRoomIndex == -1)
+                nextGameObject.GetComponent<AddRoom>().newRoom = new Node(new Vector3(nextGameObject.transform.position.x, nextGameObject.transform.position.y, nextGameObject.transform.position.z),
                                                                 nextGameObject, this.gameObject.GetComponentInParent<AddRoom>().newRoom,
                                                                 this.gameObject.GetComponentInParent<AddRoom>().lastIndex);
+            else
+                nextGameObject.GetComponent<AddRoom>().newRoom = new Node(new Vector3(nextGameObject.transform.position.x, nextGameObject.transform.position.y, nextGameObject.transform.position.z),
+                                                                nextGameObject, this.gameObject.GetComponentInParent<AddRoom>().newRoom,
+                                                                deletedRoomIndex);
         }
         
         this.GetComponentInParent<AddRoom>().nextRoom = nextGameObject;
-
-        return nextGameObject;
     }
 
     public Vector3 temp;
-
-
-    private void EnoughSpaceForSlope(GameObject gameObject)
-    {
-        if(gameObject.name.Contains("Up"))
-        {
-            if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x < this.transform.position.x)
-            {
-                isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x + 0.25f, this.transform.position.y + 0.15f, this.transform.position.z), 0.5f, groundMask)
-                    && !Physics.CheckSphere(new Vector3(this.transform.position.x + 0.15f, this.transform.position.y + 1.15f, this.transform.position.z), 0.5f, groundMask);
-                temp = new Vector3(this.transform.position.x + 0.25f, this.transform.position.y + 0.15f, this.transform.position.z);
-            }
-            else if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x > this.transform.position.x)
-            {
-                isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x - 0.25f, this.transform.position.y + 0.15f, this.transform.position.z), 0.5f, groundMask)
-                    && !Physics.CheckSphere(new Vector3(this.transform.position.x - 0.15f, this.transform.position.y + 1.15f, this.transform.position.z), 0.5f, groundMask);
-                temp = new Vector3(this.transform.position.x - 0.25f, this.transform.position.y + 0.15f, this.transform.position.z);
-            }
-            else if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z < this.transform.position.z)
-            {
-                isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z + 0.25f), 0.5f, groundMask)
-                    && !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 1.15f, this.transform.position.z + 0.15f), 0.5f, groundMask);
-                temp = new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z + 0.25f);
-            }
-            else if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z > this.transform.position.z)
-            {
-                isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z - 0.25f), 0.5f, groundMask)
-                    && !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 1.15f, this.transform.position.z - 0.15f), 0.5f, groundMask);
-                temp = new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z - 0.25f);
-            }
-        }
-        else
-        {
-            if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x < this.transform.position.x)
-            {
-                isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x + 0.25f, this.transform.position.y + 0.15f, this.transform.position.z), 0.5f, groundMask)
-                    && !Physics.CheckSphere(new Vector3(this.transform.position.x + 0.25f, this.transform.position.y + 1.15f, this.transform.position.z), 0.5f, groundMask); 
-                temp = new Vector3(this.transform.position.x + 0.25f, this.transform.position.y + 0.15f, this.transform.position.z);
-            }
-            else if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x > this.transform.position.x)
-            {
-                isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x - 0.25f, this.transform.position.y + 0.15f, this.transform.position.z), 0.5f, groundMask)
-                    && !Physics.CheckSphere(new Vector3(this.transform.position.x - 0.25f, this.transform.position.y + 1.15f, this.transform.position.z), 0.5f, groundMask); 
-                temp = new Vector3(this.transform.position.x - 0.25f, this.transform.position.y + 0.15f, this.transform.position.z);
-            }
-            else if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z < this.transform.position.z)
-            {
-                isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z + 0.25f), 0.5f, groundMask)
-                    && !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 1.15f, this.transform.position.z + 0.15f), 0.5f, groundMask);
-                temp = new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z + 0.25f);
-            }
-            else if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z > this.transform.position.z)
-            {
-                isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z - 0.25f), 0.5f, groundMask) 
-                    && !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 1.15f, this.transform.position.z - 0.15f), 0.5f, groundMask);
-                temp = new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z - 0.25f);
-            }
-        }
-
-        if (!this.GetComponentInParent<AddRoom>().gameObject.CompareTag("SpawnRoom") && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("CheckPointRoom")
-            && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("KeyRoom") && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("TrapRoom"))
-            this.GetComponentInParent<DeleteRoom>().isEnoughSpace.Add(isEnoughSpaceForRoom);
-
-        Debug.Log("EnoughSpaceForRoom: " + isEnoughSpaceForRoom + " Szoba: " + this.GetComponentInParent<AddRoom>().gameObject.name);
-
-        isSpaceCheckedForRoom = true;
-    }
 
     private void EnoughSpaceForRoom()
     {
         if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x < this.transform.position.x)
         {
-            isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x + 0.25f, this.transform.position.y + 0.15f, this.transform.position.z), 0.5f, groundMask)
-                && !Physics.CheckSphere(new Vector3(this.transform.position.x + 0.25f, this.transform.position.y + 1.15f, this.transform.position.z), 0.5f, groundMask)
-                && !Physics.CheckSphere(new Vector3(this.transform.position.x + 0.25f, this.transform.position.y - 1.15f, this.transform.position.z), 0.5f, groundMask);
+            isEnoughSpaceForRoom = CheckSphere(0.25f, 0);
             temp = new Vector3(this.transform.position.x + 0.15f, this.transform.position.y + 0.15f, this.transform.position.z);
-        }    
+        }
         else if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x > this.transform.position.x)
         {
-            
-            isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x - 0.25f, this.transform.position.y + 0.15f, this.transform.position.z), 0.5f, groundMask)
-                && !Physics.CheckSphere(new Vector3(this.transform.position.x - 0.25f, this.transform.position.y + 1.15f, this.transform.position.z), 0.5f, groundMask)
-                && !Physics.CheckSphere(new Vector3(this.transform.position.x - 0.25f, this.transform.position.y - 1.15f, this.transform.position.z), 0.5f, groundMask);
+            isEnoughSpaceForRoom = CheckSphere(-0.25f, 0);
             temp = new Vector3(this.transform.position.x - 0.15f, this.transform.position.y + 0.15f, this.transform.position.z);
         }
         else if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z < this.transform.position.z)
         {
-            isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z + 0.25f), 0.5f, groundMask)
-                && !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 1.15f, this.transform.position.z + 0.25f), 0.5f, groundMask)
-                && !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y - 1.15f, this.transform.position.z + 0.25f), 0.5f, groundMask);
+            isEnoughSpaceForRoom = CheckSphere(0, 0.25f);
             temp = new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z + 0.15f);
-        }        
+        }
         else if (isSpaceCheckedForRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z > this.transform.position.z)
         {
-            isEnoughSpaceForRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z - 0.25f), 0.5f, groundMask)
-                 && !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y + 1.15f, this.transform.position.z - 0.225f), 0.5f, groundMask)
-                 && !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y - 1.15f, this.transform.position.z - 0.25f), 0.5f, groundMask);
+            isEnoughSpaceForRoom = CheckSphere(0, -0.25f);
             temp = new Vector3(this.transform.position.x, this.transform.position.y + 0.15f, this.transform.position.z - 0.15f);
         }
-            
 
-        if(!this.GetComponentInParent<AddRoom>().gameObject.CompareTag("SpawnRoom") && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("CheckPointRoom")
+        if (!this.GetComponentInParent<AddRoom>().gameObject.CompareTag("SpawnRoom") && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("CheckPointRoom")
             && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("KeyRoom") && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("TrapRoom"))
             this.GetComponentInParent<DeleteRoom>().isEnoughSpace.Add(isEnoughSpaceForRoom);
-
-       
-        Debug.Log("EnoughSpaceForRoom: " + isEnoughSpaceForRoom + " Szoba: " + this.GetComponentInParent<AddRoom>().gameObject.name);
 
         isSpaceCheckedForRoom = true;
     }
@@ -407,16 +287,43 @@ public class RoomSpawner : MonoBehaviour
         Gizmos.DrawWireSphere(temp, 0.45f);
     }
 
-    private void EnoughShapceForSpecialRoom(float radius)
+    private void EnoughShapceForSpecialRoom(float radius, bool isCheckPointRoom)
     {
-        if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x < this.transform.position.x)
-            isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x + radius, this.transform.position.y, this.transform.position.z), radius, groundMask);
-        else if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x > this.transform.position.x)
-            isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x - radius, this.transform.position.y, this.transform.position.z), radius, groundMask);
-        else if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z < this.transform.position.z)
-            isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + radius), radius, groundMask);
-        else if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z > this.transform.position.z)
-            isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - radius), radius, groundMask);
+        if(isCheckPointRoom == false)
+        {
+            if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x < this.transform.position.x)
+                isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x + radius, this.transform.position.y, this.transform.position.z), radius, groundMask);
+            else if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x > this.transform.position.x)
+                isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x - radius, this.transform.position.y, this.transform.position.z), radius, groundMask);
+            else if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z < this.transform.position.z)
+                isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + radius), radius, groundMask);
+            else if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z > this.transform.position.z)
+                isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - radius), radius, groundMask);
+        }
+        else
+        {
+            if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x < this.transform.position.x)
+                isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x + radius, this.transform.position.y, this.transform.position.z), radius, groundMask) &&
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x + radius, this.transform.position.y, this.transform.position.z + 2), radius, groundMask) &&
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x + radius, this.transform.position.y, this.transform.position.z - 2), radius, groundMask) &&
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x + radius + 1, this.transform.position.y, this.transform.position.z), radius, groundMask);
+            else if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.x > this.transform.position.x)
+                isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x - radius, this.transform.position.y, this.transform.position.z), radius, groundMask) &&
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x - radius, this.transform.position.y, this.transform.position.z + 2), radius, groundMask) &&
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x - radius, this.transform.position.y, this.transform.position.z - 2), radius, groundMask) &&
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x - radius - 1, this.transform.position.y, this.transform.position.z), radius, groundMask);
+            else if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z < this.transform.position.z)
+                isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + radius), radius, groundMask) &&
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x + 2, this.transform.position.y, this.transform.position.z + radius), radius, groundMask) &&
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x - 2, this.transform.position.y, this.transform.position.z + radius), radius, groundMask) &&
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + radius + 1), radius, groundMask);
+            else if (isSpaceCheckedForSpecialRoom == false && this.GetComponentInParent<AddRoom>().gameObject.transform.position.z > this.transform.position.z)
+                isEnoughSpaceForSpecialRoom = !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - radius), radius, groundMask) && 
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x + 2, this.transform.position.y, this.transform.position.z - radius), radius, groundMask) &&
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x - 2, this.transform.position.y, this.transform.position.z - radius), radius, groundMask) &&
+                    !Physics.CheckSphere(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - radius - 1), radius, groundMask);
+        }
+
         if (isEnoughSpaceForSpecialRoom == false || this.GetComponentInParent<AddRoom>().name.Contains("Slope"))
         {
             isEnoughSpaceForSpecialRoom = false;
@@ -428,36 +335,17 @@ public class RoomSpawner : MonoBehaviour
         isSpaceCheckedForSpecialRoom = true;
     }
 
-    private void StepBackCollider(Collider other)
+    private bool CheckSphere(float offsetOnXCord, float offsetOnZCord)
     {
-        if (other.CompareTag("Wall") /*|| other.CompareTag("Ground"))*/ && this.nextRoom == null)
-        {
-            GameObject lastAddedRoom = this.prevRoom;
-            //GameObject lastAddedRoom = templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex][templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Count - 1].gObject;
-            RoomSpawner[] roomSpawner = lastAddedRoom.GetComponentsInChildren<RoomSpawner>();
-            foreach (RoomSpawner rs in roomSpawner)
-            {
-                if (rs.nextRoom == null)
-                    rs.isSpawned = true;
-                else
-                {
-                    rs.isSpawned = false;
-                    rs.isStepBack = true;
-                    rs.Invoke("DeleteNextRoom", 0.5f);
-                    //Destroy(rs.nextRoom);
-                }
-            }
-        }
+        return !Physics.CheckSphere(new Vector3(this.transform.position.x + offsetOnXCord, this.transform.position.y + 0.15f, this.transform.position.z + offsetOnZCord), 0.5f, groundMask)
+                && !Physics.CheckSphere(new Vector3(this.transform.position.x + offsetOnXCord, this.transform.position.y + 1.15f, this.transform.position.z + offsetOnZCord), 0.5f, groundMask)
+                && !Physics.CheckSphere(new Vector3(this.transform.position.x + offsetOnXCord, this.transform.position.y - 1.15f, this.transform.position.z + offsetOnZCord), 0.5f, groundMask);
     }
 
     public void DeleteNextRoom()
     {
-
-        //if(!this.prevRoom.CompareTag("SpawnRoom") && this.prevRoom.CompareTag("CheckPointRoom"))
-        //{
-        //    templates.g.roomLists[this.GetComponentInParent<AddRoom>().lastIndex].Clear();
-        //    templates.isFirstRoomsGenerated.RemoveAt(this.GetComponentInParent<AddRoom>().lastIndex);
-        //}
+        if (this.GetComponentInParent<AddRoom>().gameObject.CompareTag("CheckPointRoom") || this.GetComponentInParent<AddRoom>().gameObject.CompareTag("SpawnRoom"))
+            deletedRoomIndex = this.nextRoom.GetComponent<AddRoom>().newRoom.listIndex;
 
         if (!this.GetComponentInParent<AddRoom>().gameObject.CompareTag("SpawnRoom") && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("CheckPointRoom")
             && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("KeyRoom") && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("TrapRoom"))
@@ -467,6 +355,8 @@ public class RoomSpawner : MonoBehaviour
             
         if (isStepBack == true)
         {
+            //if (this.GetComponentInParent<AddRoom>().gameObject.CompareTag("CheckPointRoom") || this.GetComponentInParent<AddRoom>().gameObject.CompareTag("SpawnRoom"))
+            //    deletedRoomIndex = this.nextRoom.GetComponent<AddRoom>().newRoom.listIndex;
             templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Remove(this.nextRoom.GetComponent<AddRoom>().newRoom);
             Destroy(this.nextRoom);
             Debug.Log(templates.g.toStr());
@@ -490,7 +380,6 @@ public class RoomSpawner : MonoBehaviour
                 {
                     rs.isStepBack = true;
                     rs.Invoke("DeleteNextRoom", 0.1f);
-                    //Destroy(this.GetComponentInParent<AddRoom>().gameObject);
                 }
             }
         }
@@ -498,11 +387,6 @@ public class RoomSpawner : MonoBehaviour
         {
             lastAddedRoom.GetComponent<DeleteStageRooms>().enabled = true;
         }
-        //foreach (RoomSpawner rs in roomSpawner)
-        //{
-        //    if (rs.isSpawned == false)
-        //        rs.Invoke("Spawn", 0.5f);
-        //}
     }
 
     void DestroyUnUsedSpawnPoint()
@@ -518,7 +402,6 @@ public class RoomSpawner : MonoBehaviour
                         Destroy(rs.gameObject);
                 }
             } 
-        }
-        
+        }  
     }
 }

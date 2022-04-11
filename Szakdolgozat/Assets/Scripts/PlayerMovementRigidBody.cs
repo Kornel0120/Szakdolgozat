@@ -100,9 +100,7 @@ public class PlayerMovementRigidBody : MonoBehaviour
         if(isGrounded && !OnSlope())
             rb.AddForce(moveDirection.normalized * Speed * groundMultiplier, ForceMode.Acceleration);
         else if(isGrounded && OnSlope())
-        {
             rb.AddForce(slopeMoveDirection.normalized * Speed * slopeMultiplier, ForceMode.Acceleration);
-        }
         else if(!isGrounded)
             rb.AddForce(moveDirection.normalized * Speed * airMultiplier, ForceMode.Acceleration);
     }

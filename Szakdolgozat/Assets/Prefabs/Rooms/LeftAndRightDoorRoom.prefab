@@ -146,7 +146,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7614245215308020397
 Transform:
@@ -530,17 +530,14 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
   isEnoughSpaceForSpecialRoom: 0
   isEnoughSpaceForRoom: 0
   isSpaceCheckedForSpecialRoom: 0
   isSpaceCheckedForRoom: 0
   isStepBack: 0
-  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
-  spaceChecktemp: {fileID: 0}
   waitTime: 4
   temp: {x: 0, y: 0, z: 0}
 --- !u!1 &9208602523532336818
@@ -606,16 +603,13 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
   isEnoughSpaceForSpecialRoom: 0
   isEnoughSpaceForRoom: 0
   isSpaceCheckedForSpecialRoom: 0
   isSpaceCheckedForRoom: 0
   isStepBack: 0
-  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
-  spaceChecktemp: {fileID: 0}
   waitTime: 4
   temp: {x: 0, y: 0, z: 0}

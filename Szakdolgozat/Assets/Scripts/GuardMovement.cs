@@ -26,16 +26,20 @@ public class GuardMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Vector3.Distance(agent.transform.position, PatrolLocations[Index]) < 1 && Index == PatrolLocations.Count - 1)
+        if (Vector3.Distance(agent.transform.position, PatrolLocations[Index]) < 0.1f)
         {
-            Index = 0;
-            agent.SetDestination(PatrolLocations[Index]);
+            if (Index == PatrolLocations.Count - 1)
+            {
+                Index = 0;
+                agent.SetDestination(PatrolLocations[Index]);
+            }
+            else
+            {
+                Index++;
+                agent.SetDestination(PatrolLocations[Index]);
+            }
         }
-        else if (Vector3.Distance(agent.transform.position, PatrolLocations[Index]) < 1)
-        {
-            Index++;
-            agent.SetDestination(PatrolLocations[Index]);
-        }
+
         else if(PlayerHit(this.gameObject.transform.position, 1f) == true)
         {
             agent.SetDestination(player.transform.position);

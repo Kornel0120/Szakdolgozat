@@ -6,11 +6,13 @@ public class TrapRoomDoorsOpen : MonoBehaviour
 {
     TrapRoomController trapRoomController;
     public bool isDoorOpen = false;
+    [SerializeField]
+    public GameObject pressurePlate;
 
     private void FixedUpdate()
     {
         trapRoomController = this.gameObject.GetComponentInParent<TrapRoomController>();
-        if (trapRoomController.isDoorsOpen == true)
+        if (isDoorOpen == true)
             Invoke("DoorOpen", 0.1f);
         else
             Invoke("DoorClose", 0.1f);
@@ -19,7 +21,8 @@ public class TrapRoomDoorsOpen : MonoBehaviour
     {
         this.GetComponent<MeshRenderer>().enabled = false;
         this.GetComponent<Collider>().enabled = false;
-        //Destroy(this.gameObject);
+        if (pressurePlate.GetComponent<PressurePlateActivated>().Door = this.gameObject)
+            pressurePlate.GetComponent<PressurePlateActivated>().enabled = true;
     }
 
     void DoorClose()

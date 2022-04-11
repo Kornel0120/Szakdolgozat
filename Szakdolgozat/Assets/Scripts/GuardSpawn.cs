@@ -7,11 +7,6 @@ public class GuardSpawn : MonoBehaviour
     public GameObject guard;
     public List<GameObject> targetObjects = new List<GameObject>();
 
-    void Start()
-    {
-        Invoke("SpawnGuard", 0.5f);
-    }
-
     void SpawnGuard()
     {
         GameObject temp = Instantiate(guard, this.transform.position, this.transform.rotation);

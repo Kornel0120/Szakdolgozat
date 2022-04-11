@@ -17,20 +17,19 @@ public class DeleteStageRooms : MonoBehaviour
                 occupiedSpawner = rs;
         }
         isFirstRoomsLength = templates.isFirstRoomsGenerated.Count - 1;
-        Debug.Log("Start: " + templates.isFirstRoomsGenerated.Count);
         Invoke("DeleteRooms", 0.1f);
     }
 
-    private void OnEnable()
-    {
-        foreach (RoomSpawner rs in gameObject.GetComponentsInChildren<RoomSpawner>())
-        {
-            if (rs.nextRoom == null)
-                occupiedSpawner = rs;
-        }
-        isFirstRoomsLength = templates.isFirstRoomsGenerated.Count - 1; //nullref
-        Invoke("DeleteRooms", 0.1f);
-    }
+    //private void OnEnable()
+    //{
+    //    foreach (RoomSpawner rs in gameObject.GetComponentsInChildren<RoomSpawner>())
+    //    {
+    //        if (rs.nextRoom == null)
+    //            occupiedSpawner = rs;
+    //    }
+    //    isFirstRoomsLength = templates.isFirstRoomsGenerated.Count - 1; //nullref
+    //    Invoke("DeleteRooms", 0.1f);
+    //}
 
     private void DeleteRooms()
     {

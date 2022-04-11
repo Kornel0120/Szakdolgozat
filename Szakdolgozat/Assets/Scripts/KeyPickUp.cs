@@ -13,17 +13,35 @@ public class KeyPickUp : MonoBehaviour
 
     void KeyPickedUpByPlayer()
     {
-        GameObject[] checkPointRooms = GameObject.FindGameObjectsWithTag("CheckPointRoom");
-        foreach (GameObject checkPointRoom in checkPointRooms)
+        GameObject checkPointRoom = null;
+
+        if(templates.KeyPickedUp < 2)
         {
+            foreach (GameObject checkPointRooms in GameObject.FindGameObjectsWithTag("CheckPointRoom"))
+            {
+                if (checkPointRooms.GetComponent<AddRoom>().stage == this.GetComponentInParent<AddRoom>().stage + 1)
+                {
+                    checkPointRoom = checkPointRooms;
+                }
+            }
+        } 
+        else
+        {
+            checkPointRoom = GameObject.FindGameObjectWithTag("FinishRoom");
+        }
+
+        if(checkPointRoom != null)
+        {
+            if (templates.KeyPickedUp < 2)
+                checkPointRoom.GetComponent<GuardSpawn>().Invoke("SpawnGuard", 0.1f);
             CheckPointDoorOpen[] Doors = checkPointRoom.GetComponentsInChildren<CheckPointDoorOpen>();
             foreach (CheckPointDoorOpen CDO in Doors)
             {
                 CDO.enabled = true;
             }
+            templates.KeyPickedUp++;
+            Destroy(this.gameObject);
         }
-        templates.KeyPickedUp++;
-        Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

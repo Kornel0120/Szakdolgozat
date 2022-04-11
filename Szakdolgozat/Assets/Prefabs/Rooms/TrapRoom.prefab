@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 326359952321109469}
   - component: {fileID: 7986919968519939196}
   - component: {fileID: 328227813074183569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (15)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5495726051793791104
 MeshFilter:
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 3655536948547117652}
   - component: {fileID: 5397204059464799575}
   - component: {fileID: 6824990054079639126}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (20)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.6}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7992085967174992071
 MeshFilter:
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 961458495298930470}
   - component: {fileID: 7042143094570313406}
   - component: {fileID: 3510969039079263675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (19)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4736545984740468908
 MeshFilter:
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 4578568547712080574}
   - component: {fileID: 2615378010141505241}
   - component: {fileID: 4366059247609629374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuzzleDoor (4)
   m_TagString: PuzzleDoor
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ Transform:
   m_LocalScale: {x: 0.34, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3246646235390349561
 MeshFilter:
@@ -496,6 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpen: 0
+  pressurePlate: {fileID: 6382709640096496004}
 --- !u!1 &954411608927207946
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +511,7 @@ GameObject:
   - component: {fileID: 630714949943313284}
   - component: {fileID: 7128270163468118305}
   - component: {fileID: 3611225919997745083}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (14)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -529,7 +530,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.6}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5795604046647151353
 MeshFilter:
@@ -639,7 +640,7 @@ GameObject:
   - component: {fileID: 9985433140480873}
   - component: {fileID: 8001070422744629830}
   - component: {fileID: 5464088564092847486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (18)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -658,7 +659,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1034319482619055705
 MeshFilter:
@@ -767,7 +768,7 @@ GameObject:
   - component: {fileID: 7169546340040166513}
   - component: {fileID: 5381757797078184181}
   - component: {fileID: 1811431508781730763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuzzleDoor (3)
   m_TagString: PuzzleDoor
   m_Icon: {fileID: 0}
@@ -786,7 +787,7 @@ Transform:
   m_LocalScale: {x: 0.34, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &759354816974329453
 MeshFilter:
@@ -863,6 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpen: 0
+  pressurePlate: {fileID: 5136099943405831789}
 --- !u!1 &1785447729740903867
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +879,7 @@ GameObject:
   - component: {fileID: 1389564459885458473}
   - component: {fileID: 1364227911021757459}
   - component: {fileID: 2613371112615763922}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (16)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -896,7 +898,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2743262743795313082
 MeshFilter:
@@ -1005,7 +1007,7 @@ GameObject:
   - component: {fileID: 5591784331819638518}
   - component: {fileID: 8645195348329270216}
   - component: {fileID: 5475556301561727775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuzzleDoor (2)
   m_TagString: PuzzleDoor
   m_Icon: {fileID: 0}
@@ -1024,7 +1026,7 @@ Transform:
   m_LocalScale: {x: 0.34, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4832997765448476151
 MeshFilter:
@@ -1101,6 +1103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpen: 0
+  pressurePlate: {fileID: 8103212984970641910}
 --- !u!1 &2278097422833185096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,7 +1118,7 @@ GameObject:
   - component: {fileID: 6195924033905806765}
   - component: {fileID: 2354382218293283916}
   - component: {fileID: 1833239960361825811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (10)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1134,7 +1137,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8794663668279340090
 MeshFilter:
@@ -1242,7 +1245,7 @@ GameObject:
   - component: {fileID: 3574049324852680071}
   - component: {fileID: 6994718363623832475}
   - component: {fileID: 7835581701650936934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PressurePlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1341,7 +1344,7 @@ GameObject:
   - component: {fileID: 913055211626590253}
   - component: {fileID: 1802012690088083403}
   - component: {fileID: 1983358671625623389}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1470,7 +1473,7 @@ GameObject:
   - component: {fileID: 6192591318776804082}
   - component: {fileID: 6917781080637164999}
   - component: {fileID: 2548067220168184839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (6)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1597,7 +1600,8 @@ GameObject:
   - component: {fileID: 6181171071432901376}
   - component: {fileID: 6563334612040785011}
   - component: {fileID: 6262388205193729274}
-  m_Layer: 0
+  - component: {fileID: 1750038174375351695}
+  m_Layer: 6
   m_Name: Button
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -1681,6 +1685,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1750038174375351695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2563848184092977279}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8291c709e14742a41c8cd30c8c721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapRoomController: {fileID: 0}
+  TrapRooms: []
+  thisTrapRoom: {fileID: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  Door: {fileID: 8451118728902807888}
 --- !u!1 &3147887254110771349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,7 +1716,8 @@ GameObject:
   - component: {fileID: 610885593961654428}
   - component: {fileID: 1786461521451988668}
   - component: {fileID: 4415010422094062506}
-  m_Layer: 0
+  - component: {fileID: 7803347960611919591}
+  m_Layer: 6
   m_Name: Button
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -1777,6 +1801,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7803347960611919591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147887254110771349}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8291c709e14742a41c8cd30c8c721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapRoomController: {fileID: 0}
+  TrapRooms: []
+  thisTrapRoom: {fileID: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  Door: {fileID: 3484803514888475312}
 --- !u!1 &3417412578779315196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,7 +1834,7 @@ GameObject:
   - component: {fileID: 6130645012666912669}
   - component: {fileID: 1373670248438516924}
   - component: {fileID: 6262809489067895209}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (5)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1919,7 +1962,7 @@ GameObject:
   - component: {fileID: 470852782453943806}
   - component: {fileID: 121643209859261037}
   - component: {fileID: 5073934419493337107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuzzleDoor (1)
   m_TagString: PuzzleDoor
   m_Icon: {fileID: 0}
@@ -1938,7 +1981,7 @@ Transform:
   m_LocalScale: {x: 0.33, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5969122613333114332
 MeshFilter:
@@ -2015,6 +2058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpen: 0
+  pressurePlate: {fileID: 3147887254110771349}
 --- !u!1 &3743440178524816111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,7 +2071,7 @@ GameObject:
   - component: {fileID: 5593556736922374038}
   - component: {fileID: 7634382797380204598}
   - component: {fileID: 5957431426525484397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PressurePlate (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2125,7 +2169,7 @@ GameObject:
   - component: {fileID: 6216876819304549224}
   - component: {fileID: 8610327879255015250}
   - component: {fileID: 6734783583470533943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -2216,7 +2260,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4057974266260182665}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ec8291c709e14742a41c8cd30c8c721, type: 3}
   m_Name: 
@@ -2224,6 +2268,10 @@ MonoBehaviour:
   trapRoomController: {fileID: 0}
   TrapRooms: []
   thisTrapRoom: {fileID: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  Door: {fileID: 0}
 --- !u!1 &4166015457574464153
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,7 +2286,7 @@ GameObject:
   - component: {fileID: 7392646553118297100}
   - component: {fileID: 1295496038947893517}
   - component: {fileID: 2696211151962785828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (22)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2257,7 +2305,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5181960055751260337
 MeshFilter:
@@ -2353,6 +2401,131 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!1 &4607066110799314606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4664015181914750348}
+  - component: {fileID: 1338650684686418118}
+  - component: {fileID: 319625374296815177}
+  - component: {fileID: 3209935751795808680}
+  - component: {fileID: 6180802016167653792}
+  - component: {fileID: 5446033624011219641}
+  m_Layer: 0
+  m_Name: Door (1)
+  m_TagString: Door
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4664015181914750348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607066110799314606}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.95, y: 0.3, z: 0}
+  m_LocalScale: {x: 0.59999996, y: 0.5, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 6682511841251702428}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!33 &1338650684686418118
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607066110799314606}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &319625374296815177
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607066110799314606}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0a66d02f16f968e4aa606bc6599050ec, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3209935751795808680
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607066110799314606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6180802016167653792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607066110799314606}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59fed124ce096534184171cac3a4a683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!208 &5446033624011219641
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607066110799314606}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.3, y: 0.25, z: 0.05}
+  m_MoveThreshold: 0.2
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &4860581923839216259
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,7 +2540,7 @@ GameObject:
   - component: {fileID: 2975599291938462313}
   - component: {fileID: 3957260946022663349}
   - component: {fileID: 7720730392640520527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (9)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2386,7 +2559,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8070356158051839556
 MeshFilter:
@@ -2494,7 +2667,7 @@ GameObject:
   - component: {fileID: 7030378645687646989}
   - component: {fileID: 3483656993122954506}
   - component: {fileID: 2085491546194971459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PressurePlate (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2591,7 +2764,8 @@ GameObject:
   - component: {fileID: 9115104140777247712}
   - component: {fileID: 6961295722420249668}
   - component: {fileID: 3702698297561371300}
-  m_Layer: 0
+  - component: {fileID: 2802643298513352969}
+  m_Layer: 6
   m_Name: Button
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -2675,6 +2849,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2802643298513352969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136099943405831789}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8291c709e14742a41c8cd30c8c721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapRoomController: {fileID: 0}
+  TrapRooms: []
+  thisTrapRoom: {fileID: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  Door: {fileID: 1520704788449110435}
 --- !u!1 &5343682774597948619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2687,7 +2880,7 @@ GameObject:
   - component: {fileID: 6902824850579499806}
   - component: {fileID: 3950445164031508356}
   - component: {fileID: 4836562253316712344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PressurePlate (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2786,7 +2979,7 @@ GameObject:
   - component: {fileID: 3669917160963213406}
   - component: {fileID: 3560437162064599869}
   - component: {fileID: 1241930771678724465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2913,7 +3106,7 @@ GameObject:
   - component: {fileID: 3067717886664613286}
   - component: {fileID: 7819897242435573218}
   - component: {fileID: 8973826108641309142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PressurePlate (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3012,7 +3205,7 @@ GameObject:
   - component: {fileID: 1408964830103134455}
   - component: {fileID: 1409181856094071388}
   - component: {fileID: 2444172224638461850}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3139,7 +3332,8 @@ GameObject:
   - component: {fileID: 1652316673455426434}
   - component: {fileID: 8256978916763215909}
   - component: {fileID: 3795640802190640703}
-  m_Layer: 0
+  - component: {fileID: 8652373559318518516}
+  m_Layer: 6
   m_Name: Button
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -3223,6 +3417,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8652373559318518516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6382709640096496004}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8291c709e14742a41c8cd30c8c721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapRoomController: {fileID: 0}
+  TrapRooms: []
+  thisTrapRoom: {fileID: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  Door: {fileID: 798553492018100219}
 --- !u!1 &6861552333907696100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,7 +3545,7 @@ GameObject:
   - component: {fileID: 3202042142317475123}
   - component: {fileID: 7045848151577955518}
   - component: {fileID: 7418276933460436898}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3460,7 +3673,7 @@ GameObject:
   - component: {fileID: 2267945858528445704}
   - component: {fileID: 5390357453645787162}
   - component: {fileID: 3236712253954032144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuzzleDoor
   m_TagString: PuzzleDoor
   m_Icon: {fileID: 0}
@@ -3479,7 +3692,7 @@ Transform:
   m_LocalScale: {x: 0.33, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7914099295925017355
 MeshFilter:
@@ -3556,6 +3769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpen: 0
+  pressurePlate: {fileID: 8818005218187453754}
 --- !u!1 &7112027762121002728
 GameObject:
   m_ObjectHideFlags: 0
@@ -3570,7 +3784,7 @@ GameObject:
   - component: {fileID: 1197218545738394568}
   - component: {fileID: 4054374357379869415}
   - component: {fileID: 7512492008087358509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (7)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3589,7 +3803,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &201699728176450922
 MeshFilter:
@@ -3699,7 +3913,7 @@ GameObject:
   - component: {fileID: 5126432890087326090}
   - component: {fileID: 3207140779287969331}
   - component: {fileID: 4864505985925444789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (21)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3718,7 +3932,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.6}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &74053115735023516
 MeshFilter:
@@ -3828,7 +4042,7 @@ GameObject:
   - component: {fileID: 2097972523227869983}
   - component: {fileID: 6474567769613959708}
   - component: {fileID: 8643733773505840583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (8)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3847,7 +4061,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1468883868955763619
 MeshFilter:
@@ -3943,6 +4157,50 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!1 &7586122695055171304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4219443676203048897}
+  - component: {fileID: 7637941085256979706}
+  m_Layer: 6
+  m_Name: CubeSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4219443676203048897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7586122695055171304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6682511841251702428}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7637941085256979706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7586122695055171304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498599e430259314cbdc168a2636c929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: {fileID: 4414056257543112983, guid: f81f59f41a7431047a3b9800a6ca4d04, type: 3}
 --- !u!1 &7678853813542282385
 GameObject:
   m_ObjectHideFlags: 0
@@ -3957,7 +4215,7 @@ GameObject:
   - component: {fileID: 2800329523164629004}
   - component: {fileID: 7217229680325041282}
   - component: {fileID: 6304587950302874564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (12)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3976,7 +4234,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8749795536800515326
 MeshFilter:
@@ -4084,7 +4342,7 @@ GameObject:
   - component: {fileID: 8714893285422466930}
   - component: {fileID: 8560766940676631369}
   - component: {fileID: 242986983930131665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PressurePlate (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4183,7 +4441,7 @@ GameObject:
   - component: {fileID: 3610507947503193545}
   - component: {fileID: 5353441606625139446}
   - component: {fileID: 3822196162973764661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (17)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4202,7 +4460,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4006148951158233498
 MeshFilter:
@@ -4312,7 +4570,7 @@ GameObject:
   - component: {fileID: 7066534620081718618}
   - component: {fileID: 5962212258525706801}
   - component: {fileID: 6850482002956461465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (13)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4331,7 +4589,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.6}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &133407865970504672
 MeshFilter:
@@ -4439,7 +4697,8 @@ GameObject:
   - component: {fileID: 8391499410908756616}
   - component: {fileID: 7258438056260407729}
   - component: {fileID: 6877601990030265870}
-  m_Layer: 0
+  - component: {fileID: 1572649156993858509}
+  m_Layer: 6
   m_Name: Button
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -4523,6 +4782,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1572649156993858509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103212984970641910}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8291c709e14742a41c8cd30c8c721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapRoomController: {fileID: 0}
+  TrapRooms: []
+  thisTrapRoom: {fileID: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  Door: {fileID: 2163062548396856501}
 --- !u!1 &8342457215778093514
 GameObject:
   m_ObjectHideFlags: 0
@@ -4537,7 +4815,7 @@ GameObject:
   - component: {fileID: 7812031394388139367}
   - component: {fileID: 9214494523797034700}
   - component: {fileID: 1087895676767863340}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (4)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4652,132 +4930,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &8358351959123974689
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1217405930499985313}
-  - component: {fileID: 7474532185762436847}
-  - component: {fileID: 7639442430344990796}
-  - component: {fileID: 518565385928114463}
-  - component: {fileID: 3988595109423619476}
-  - component: {fileID: 387751143228768128}
-  m_Layer: 6
-  m_Name: PuzzleCube
-  m_TagString: Grabbable
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1217405930499985313
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8358351959123974689}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.721, y: 0.151, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
-  m_Children: []
-  m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7474532185762436847
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8358351959123974689}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7639442430344990796
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8358351959123974689}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &518565385928114463
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8358351959123974689}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
-  m_Center: {x: -0.00000011920935, y: 0, z: -0.00000011920935}
---- !u!54 &3988595109423619476
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8358351959123974689}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &387751143228768128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8358351959123974689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94b6f820664acf84da27ba993d12f810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GrabbedObjectPosition: {fileID: 0}
 --- !u!1 &8392216849041147547
 GameObject:
   m_ObjectHideFlags: 0
@@ -4790,7 +4942,7 @@ GameObject:
   - component: {fileID: 1335990360770668915}
   - component: {fileID: 9158493150211295789}
   - component: {fileID: 5898518489097739113}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PressurePlate (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4888,7 +5040,7 @@ GameObject:
   - component: {fileID: 5907984425114480473}
   - component: {fileID: 8832309239726412642}
   - component: {fileID: 6363471096745358126}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuzzleDoor (5)
   m_TagString: PuzzleDoor
   m_Icon: {fileID: 0}
@@ -4907,7 +5059,7 @@ Transform:
   m_LocalScale: {x: 0.34, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7115592831314708844
 MeshFilter:
@@ -4984,6 +5136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpen: 0
+  pressurePlate: {fileID: 2563848184092977279}
 --- !u!1 &8627609030732986340
 GameObject:
   m_ObjectHideFlags: 0
@@ -4998,7 +5151,7 @@ GameObject:
   - component: {fileID: 5009165783479072294}
   - component: {fileID: 2649553784985269152}
   - component: {fileID: 3914487650693680827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (11)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -5017,7 +5170,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6682511841251702428}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6409723838061478067
 MeshFilter:
@@ -5125,7 +5278,7 @@ GameObject:
   - component: {fileID: 3135418084473428047}
   - component: {fileID: 6740509480304278941}
   - component: {fileID: 6234837225348637482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TrapRoom
   m_TagString: TrapRoom
   m_Icon: {fileID: 0}
@@ -5152,7 +5305,6 @@ Transform:
   - {fileID: 8585227504826887215}
   - {fileID: 8832739017111180294}
   - {fileID: 6028901205769350331}
-  - {fileID: 1217405930499985313}
   - {fileID: 2650135875693127438}
   - {fileID: 6915473308230934978}
   - {fileID: 921014461870006524}
@@ -5175,6 +5327,7 @@ Transform:
   - {fileID: 2124791111843113168}
   - {fileID: 7847830688384856677}
   - {fileID: 3531882827270440443}
+  - {fileID: 4664015181914750348}
   - {fileID: 7352343452355972088}
   - {fileID: 8629053811640690129}
   - {fileID: 87510458558449386}
@@ -5182,6 +5335,7 @@ Transform:
   - {fileID: 6054752403936643619}
   - {fileID: 3940568560563434094}
   - {fileID: 4834267811866121386}
+  - {fileID: 4219443676203048897}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5338,7 +5492,8 @@ GameObject:
   - component: {fileID: 7587007540464827471}
   - component: {fileID: 4279575922580622045}
   - component: {fileID: 2626255112614312473}
-  m_Layer: 0
+  - component: {fileID: 8638921195630915274}
+  m_Layer: 6
   m_Name: Button
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -5422,3 +5577,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8638921195630915274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818005218187453754}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8291c709e14742a41c8cd30c8c721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapRoomController: {fileID: 0}
+  TrapRooms: []
+  thisTrapRoom: {fileID: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  Door: {fileID: 7009641465791223085}

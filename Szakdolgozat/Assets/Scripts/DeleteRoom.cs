@@ -40,7 +40,7 @@ public class DeleteRoom : MonoBehaviour
                 rs.isStepBack = true;
                 rs.isSpaceCheckedForRoom = false;
                 rs.isSpaceCheckedForSpecialRoom = false;
-                rs.Invoke("DeleteNextRoom", 0.5f);
+                rs.Invoke("DeleteNextRoom", 0.0f); //0.5f
             }
         }
     }

@@ -1325,7 +1325,7 @@ MeshCollider:
   m_GameObject: {fileID: 2395376079456301473}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -1599,8 +1599,8 @@ GameObject:
   - component: {fileID: 6490580995298212987}
   - component: {fileID: 6181171071432901376}
   - component: {fileID: 6563334612040785011}
-  - component: {fileID: 6262388205193729274}
   - component: {fileID: 1750038174375351695}
+  - component: {fileID: 2741363539399548488}
   m_Layer: 6
   m_Name: Button
   m_TagString: Button
@@ -1671,20 +1671,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6262388205193729274
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2563848184092977279}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1750038174375351695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,6 +1690,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Door: {fileID: 8451118728902807888}
+--- !u!65 &2741363539399548488
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2563848184092977279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3147887254110771349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,8 +1714,8 @@ GameObject:
   - component: {fileID: 3532075681562496425}
   - component: {fileID: 610885593961654428}
   - component: {fileID: 1786461521451988668}
-  - component: {fileID: 4415010422094062506}
   - component: {fileID: 7803347960611919591}
+  - component: {fileID: 4581559583204431386}
   m_Layer: 6
   m_Name: Button
   m_TagString: Button
@@ -1787,20 +1786,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4415010422094062506
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3147887254110771349}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &7803347960611919591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1820,6 +1805,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Door: {fileID: 3484803514888475312}
+--- !u!65 &4581559583204431386
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147887254110771349}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3417412578779315196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,7 +2068,6 @@ GameObject:
   - component: {fileID: 87510458558449386}
   - component: {fileID: 5593556736922374038}
   - component: {fileID: 7634382797380204598}
-  - component: {fileID: 5957431426525484397}
   m_Layer: 6
   m_Name: PressurePlate (2)
   m_TagString: Untagged
@@ -2142,20 +2139,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5957431426525484397
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3743440178524816111}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &4057974266260182665
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,6 +2152,7 @@ GameObject:
   - component: {fileID: 6216876819304549224}
   - component: {fileID: 8610327879255015250}
   - component: {fileID: 6734783583470533943}
+  - component: {fileID: 2791668499847695137}
   m_Layer: 6
   m_Name: Button
   m_TagString: Button
@@ -2248,7 +2232,7 @@ MeshCollider:
   m_GameObject: {fileID: 4057974266260182665}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -2272,6 +2256,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Door: {fileID: 0}
+--- !u!65 &2791668499847695137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057974266260182665}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4166015457574464153
 GameObject:
   m_ObjectHideFlags: 0
@@ -2666,7 +2663,6 @@ GameObject:
   - component: {fileID: 5276435573520838834}
   - component: {fileID: 7030378645687646989}
   - component: {fileID: 3483656993122954506}
-  - component: {fileID: 2085491546194971459}
   m_Layer: 6
   m_Name: PressurePlate (3)
   m_TagString: Untagged
@@ -2738,20 +2734,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2085491546194971459
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5034025403352619556}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &5136099943405831789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,8 +2745,8 @@ GameObject:
   - component: {fileID: 5235204470412599043}
   - component: {fileID: 9115104140777247712}
   - component: {fileID: 6961295722420249668}
-  - component: {fileID: 3702698297561371300}
   - component: {fileID: 2802643298513352969}
+  - component: {fileID: 3949356829904733015}
   m_Layer: 6
   m_Name: Button
   m_TagString: Button
@@ -2835,20 +2817,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3702698297561371300
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5136099943405831789}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &2802643298513352969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2868,6 +2836,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Door: {fileID: 1520704788449110435}
+--- !u!65 &3949356829904733015
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136099943405831789}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5343682774597948619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,7 +2860,6 @@ GameObject:
   - component: {fileID: 3940568560563434094}
   - component: {fileID: 6902824850579499806}
   - component: {fileID: 3950445164031508356}
-  - component: {fileID: 4836562253316712344}
   m_Layer: 6
   m_Name: PressurePlate (5)
   m_TagString: Untagged
@@ -2951,20 +2931,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4836562253316712344
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5343682774597948619}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &6124891922447656734
 GameObject:
   m_ObjectHideFlags: 0
@@ -3105,7 +3071,6 @@ GameObject:
   - component: {fileID: 4834267811866121386}
   - component: {fileID: 3067717886664613286}
   - component: {fileID: 7819897242435573218}
-  - component: {fileID: 8973826108641309142}
   m_Layer: 6
   m_Name: PressurePlate (6)
   m_TagString: Untagged
@@ -3177,20 +3142,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8973826108641309142
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6230997434750515615}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &6282675158994420408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3331,8 +3282,8 @@ GameObject:
   - component: {fileID: 5675872153589645508}
   - component: {fileID: 1652316673455426434}
   - component: {fileID: 8256978916763215909}
-  - component: {fileID: 3795640802190640703}
   - component: {fileID: 8652373559318518516}
+  - component: {fileID: 3790551112886314829}
   m_Layer: 6
   m_Name: Button
   m_TagString: Button
@@ -3403,20 +3354,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3795640802190640703
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6382709640096496004}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &8652373559318518516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3436,6 +3373,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Door: {fileID: 798553492018100219}
+--- !u!65 &3790551112886314829
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6382709640096496004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6861552333907696100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4341,7 +4291,6 @@ GameObject:
   - component: {fileID: 8629053811640690129}
   - component: {fileID: 8714893285422466930}
   - component: {fileID: 8560766940676631369}
-  - component: {fileID: 242986983930131665}
   m_Layer: 6
   m_Name: PressurePlate (1)
   m_TagString: Untagged
@@ -4413,20 +4362,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &242986983930131665
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759886504080573107}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7776439678013487884
 GameObject:
   m_ObjectHideFlags: 0
@@ -4696,8 +4631,8 @@ GameObject:
   - component: {fileID: 5690109784791549885}
   - component: {fileID: 8391499410908756616}
   - component: {fileID: 7258438056260407729}
-  - component: {fileID: 6877601990030265870}
   - component: {fileID: 1572649156993858509}
+  - component: {fileID: 5041849247362228314}
   m_Layer: 6
   m_Name: Button
   m_TagString: Button
@@ -4768,20 +4703,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6877601990030265870
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8103212984970641910}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1572649156993858509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4801,6 +4722,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Door: {fileID: 2163062548396856501}
+--- !u!65 &5041849247362228314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103212984970641910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8342457215778093514
 GameObject:
   m_ObjectHideFlags: 0
@@ -4941,7 +4875,6 @@ GameObject:
   - component: {fileID: 6054752403936643619}
   - component: {fileID: 1335990360770668915}
   - component: {fileID: 9158493150211295789}
-  - component: {fileID: 5898518489097739113}
   m_Layer: 6
   m_Name: PressurePlate (4)
   m_TagString: Untagged
@@ -5013,20 +4946,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5898518489097739113
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8392216849041147547}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8451118728902807888
 GameObject:
   m_ObjectHideFlags: 0
@@ -5277,7 +5196,6 @@ GameObject:
   - component: {fileID: 6682511841251702428}
   - component: {fileID: 3135418084473428047}
   - component: {fileID: 6740509480304278941}
-  - component: {fileID: 6234837225348637482}
   m_Layer: 6
   m_Name: TrapRoom
   m_TagString: TrapRoom
@@ -5369,22 +5287,6 @@ MonoBehaviour:
   lastIndex: 0
   stage: 0
   nextRoom: {fileID: 0}
---- !u!54 &6234837225348637482
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8697051537438855123}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8721039940317651021
 GameObject:
   m_ObjectHideFlags: 0
@@ -5491,8 +5393,8 @@ GameObject:
   - component: {fileID: 2612722983455233133}
   - component: {fileID: 7587007540464827471}
   - component: {fileID: 4279575922580622045}
-  - component: {fileID: 2626255112614312473}
   - component: {fileID: 8638921195630915274}
+  - component: {fileID: 8046112807875101318}
   m_Layer: 6
   m_Name: Button
   m_TagString: Button
@@ -5563,20 +5465,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2626255112614312473
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8818005218187453754}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &8638921195630915274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5596,3 +5484,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Door: {fileID: 7009641465791223085}
+--- !u!65 &8046112807875101318
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818005218187453754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -26,7 +26,7 @@ public class GuardMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Vector3.Distance(agent.transform.position, PatrolLocations[Index]) < 0.1f)
+        if (Vector3.Distance(agent.transform.position, PatrolLocations[Index]) < 1f)
         {
             if (Index == PatrolLocations.Count - 1)
             {

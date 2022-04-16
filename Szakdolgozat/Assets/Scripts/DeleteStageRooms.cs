@@ -17,7 +17,7 @@ public class DeleteStageRooms : MonoBehaviour
                 occupiedSpawner = rs;
         }
         isFirstRoomsLength = templates.isFirstRoomsGenerated.Count - 1;
-        Invoke("DeleteRooms", 0.1f);
+        Invoke("DeleteRooms", 0.0f); //0.1f
     }
 
     //private void OnEnable()
@@ -83,7 +83,7 @@ public class DeleteStageRooms : MonoBehaviour
                 rs.isEnoughSpaceForRoom = false;
                 rs.isStepBack = false;
                 rs.isSpawned = false;
-                rs.Invoke("Spawn", 0.5f);
+                rs.Invoke("Spawn", 0.0f); //0.5f
             }
             
         }

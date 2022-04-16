@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scripts\SpaceCheck.cs" />
     <Compile Include="Assets\Scripts\PressurePlateActivated.cs" />
     <Compile Include="Assets\Scripts\DeleteRoom.cs" />
+    <Compile Include="Assets\Scripts\PuzzleCubeSawn.cs" />
     <Compile Include="Assets\Scripts\GuardSpawn.cs" />
     <Compile Include="Assets\Scripts\WallCheck.cs" />
     <Compile Include="Assets\Scripts\MoveCam.cs" />
@@ -81,7 +82,7 @@
     <Compile Include="Assets\Scripts\SpawnRoomSpawn.cs" />
     <Compile Include="Assets\Scripts\TrapRoomDoorsOpen.cs" />
     <Compile Include="Assets\Scripts\TrapRoomController.cs" />
-    <Compile Include="Assets\Scripts\PuzzleCubeSawn.cs" />
+    <Compile Include="Assets\Scripts\DeleteStageRoomSpawners.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

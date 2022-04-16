@@ -139,7 +139,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1610445523212397871}
   - component: {fileID: 7186559542667006469}
-  - component: {fileID: 2494430197995184209}
   - component: {fileID: 4363615470199895033}
   - component: {fileID: 356124233256295260}
   - component: {fileID: 3824144470663919802}
@@ -184,22 +183,6 @@ MonoBehaviour:
   lastIndex: 1
   stage: 1
   nextRoom: {fileID: 0}
---- !u!54 &2494430197995184209
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302853546048038574}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4363615470199895033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -209,7 +192,7 @@ BoxCollider:
   m_GameObject: {fileID: 1302853546048038574}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.3, z: 0.15}
   m_Center: {x: 0, y: 0.4, z: -0.6}
@@ -222,7 +205,7 @@ BoxCollider:
   m_GameObject: {fileID: 1302853546048038574}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.3, z: 0.5}
   m_Center: {x: -0.6, y: 0.4, z: 0}
@@ -401,17 +384,14 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  surface: {fileID: 0}
   isSpawned: 0
   isEnoughSpaceForSpecialRoom: 0
   isEnoughSpaceForRoom: 0
   isSpaceCheckedForSpecialRoom: 0
   isSpaceCheckedForRoom: 0
   isStepBack: 0
-  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
-  spaceChecktemp: {fileID: 0}
   waitTime: 4
   temp: {x: 0, y: 0, z: 0}
 --- !u!1 &5675161988122327176
@@ -477,17 +457,14 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  surface: {fileID: 0}
   isSpawned: 0
   isEnoughSpaceForSpecialRoom: 0
   isEnoughSpaceForRoom: 0
   isSpaceCheckedForSpecialRoom: 0
   isSpaceCheckedForRoom: 0
   isStepBack: 0
-  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
-  spaceChecktemp: {fileID: 0}
   waitTime: 4
   temp: {x: 0, y: 0, z: 0}
 --- !u!1 &6476345571534967318

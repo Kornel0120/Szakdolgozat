@@ -21,7 +21,7 @@ public class AddRoom : MonoBehaviour
     {
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();        
         SRS = GameObject.FindGameObjectWithTag("Rooms").GetComponent<SpawnRoomSpawn>();
-        Invoke("addRoom", 0.1f);
+        Invoke("addRoom", 0.0f); //0.1f
     }
 
     void addRoom()

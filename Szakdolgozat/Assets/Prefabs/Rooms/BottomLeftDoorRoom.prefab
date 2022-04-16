@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1322294478700916909}
   - component: {fileID: 1623382119451861800}
-  - component: {fileID: 7490070681721731611}
   - component: {fileID: 1482557206572270031}
   - component: {fileID: 4771299492879587302}
   - component: {fileID: 2042904582263090241}
@@ -55,22 +54,6 @@ MonoBehaviour:
   lastIndex: 3
   stage: 0
   nextRoom: {fileID: 0}
---- !u!54 &7490070681721731611
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365295052536472309}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1482557206572270031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80,7 +63,7 @@ BoxCollider:
   m_GameObject: {fileID: 1365295052536472309}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.3, z: 0.5}
   m_Center: {x: 0.6, y: 0.4, z: 0}
@@ -93,7 +76,7 @@ BoxCollider:
   m_GameObject: {fileID: 1365295052536472309}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.3, z: 0.15}
   m_Center: {x: 0, y: 0.4, z: 0.6}
@@ -435,17 +418,14 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
   isEnoughSpaceForSpecialRoom: 0
   isEnoughSpaceForRoom: 0
   isSpaceCheckedForSpecialRoom: 0
   isSpaceCheckedForRoom: 0
   isStepBack: 0
-  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
-  spaceChecktemp: {fileID: 0}
   waitTime: 4
   temp: {x: 0, y: 0, z: 0}
 --- !u!1 &6775618209226142087
@@ -511,17 +491,14 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  surface: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
   isSpawned: 0
   isEnoughSpaceForSpecialRoom: 0
   isEnoughSpaceForRoom: 0
   isSpaceCheckedForSpecialRoom: 0
   isSpaceCheckedForRoom: 0
   isStepBack: 0
-  isNodeCreated: 0
   nextRoom: {fileID: 0}
   prevRoom: {fileID: 0}
-  spaceChecktemp: {fileID: 0}
   waitTime: 4
   temp: {x: 0, y: 0, z: 0}
 --- !u!1 &6883974027012875371

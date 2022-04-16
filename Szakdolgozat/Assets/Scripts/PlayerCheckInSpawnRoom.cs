@@ -16,7 +16,6 @@ public class PlayerCheckInSpawnRoom : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log("plaerOutside: " + playerOutsideSpawnRoom());
         if (playerOutsideSpawnRoom() == true && templates.isFinishRoomSpawned == true)
         {
             this.gameObject.GetComponentInParent<GuardSpawn>().Invoke("SpawnGuard", 0.1f);
@@ -33,7 +32,7 @@ public class PlayerCheckInSpawnRoom : MonoBehaviour
         foreach (Collider collider in Physics.OverlapSphere(this.transform.position, 5, groundMask))
         {
             inRangeGameObjects.Add(collider.gameObject.tag);
-        }
+        } 
         if (inRangeGameObjects.Contains("Player"))
             return false;
         else

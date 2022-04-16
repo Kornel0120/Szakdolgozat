@@ -57,7 +57,6 @@ public class PressurePlateActivated : MonoBehaviour
             }
         }
 
-        Debug.Log("cubeOnPressurePlate: " + cubeOnPressurePlate());
         if (cubeOnPressurePlate() == true)
         {
             if (this.Door == null)
@@ -70,10 +69,7 @@ public class PressurePlateActivated : MonoBehaviour
                 rand = Random.Range(0, Doors.Count - 1);
             else
                 rand = 0;
-            foreach (TrapRoomDoorsOpen go in Doors)
-            {
-                Debug.Log("TrapRoomDoors: " + go.gameObject);
-            }
+
             this.trapRoomController.isDoorsOpen = true;
             if(isNewCubeSpawned == false && Doors.Count > 0)
             {

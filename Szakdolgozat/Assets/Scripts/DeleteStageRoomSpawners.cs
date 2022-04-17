@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DeleteStageRoomSpawners : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         Invoke("DeletePrevStageSpawners", 0.0f);

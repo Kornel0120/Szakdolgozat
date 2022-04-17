@@ -8,7 +8,7 @@ public class AddRoom : MonoBehaviour
     private RoomTemplates templates;
     public Node newRoom;
     public int lastIndex;
-    private List<GameObject> checkedRooms = new List<GameObject>();
+    //private List<GameObject> checkedRooms = new List<GameObject>();
     public byte stage = 0;
     public GameObject nextRoom;
 
@@ -106,6 +106,5 @@ public class AddRoom : MonoBehaviour
 
             templates.resetCounter++;
         }
-        Debug.Log(templates.g.toStr());
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6103770593193605073}
   - component: {fileID: 326359952321109469}
   - component: {fileID: 7986919968519939196}
-  - component: {fileID: 328227813074183569}
+  - component: {fileID: 4573044907057524792}
   m_Layer: 6
   m_Name: Wall (15)
   m_TagString: Wall
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &328227813074183569
+--- !u!208 &4573044907057524792
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,8 +123,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 2624476705368996253}
   - component: {fileID: 3655536948547117652}
   - component: {fileID: 5397204059464799575}
-  - component: {fileID: 6824990054079639126}
+  - component: {fileID: 4489875457078604237}
   m_Layer: 6
   m_Name: Wall (20)
   m_TagString: Wall
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &6824990054079639126
+--- !u!208 &4489875457078604237
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,8 +252,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.3}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 6349319872015146060}
   - component: {fileID: 961458495298930470}
   - component: {fileID: 7042143094570313406}
-  - component: {fileID: 3510969039079263675}
+  - component: {fileID: 1487626927035134882}
   m_Layer: 6
   m_Name: Wall (19)
   m_TagString: Wall
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &3510969039079263675
+--- !u!208 &1487626927035134882
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -381,8 +381,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 5714198289276420794}
   - component: {fileID: 630714949943313284}
   - component: {fileID: 7128270163468118305}
-  - component: {fileID: 3611225919997745083}
+  - component: {fileID: 8607956842708696311}
   m_Layer: 6
   m_Name: Wall (14)
   m_TagString: Wall
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &3611225919997745083
+--- !u!208 &8607956842708696311
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -620,8 +620,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.3}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 8668263973688319184}
   - component: {fileID: 9985433140480873}
   - component: {fileID: 8001070422744629830}
-  - component: {fileID: 5464088564092847486}
+  - component: {fileID: 8743436826796161132}
   m_Layer: 6
   m_Name: Wall (18)
   m_TagString: Wall
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &5464088564092847486
+--- !u!208 &8743436826796161132
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -749,8 +749,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 6198462734533390000}
   - component: {fileID: 1389564459885458473}
   - component: {fileID: 1364227911021757459}
-  - component: {fileID: 2613371112615763922}
+  - component: {fileID: 8099058474310767866}
   m_Layer: 6
   m_Name: Wall (16)
   m_TagString: Wall
@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &2613371112615763922
+--- !u!208 &8099058474310767866
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -988,8 +988,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1117,7 +1117,7 @@ GameObject:
   - component: {fileID: 1119218951139480059}
   - component: {fileID: 6195924033905806765}
   - component: {fileID: 2354382218293283916}
-  - component: {fileID: 1833239960361825811}
+  - component: {fileID: 8033152853067237573}
   m_Layer: 6
   m_Name: Wall (10)
   m_TagString: Wall
@@ -1217,7 +1217,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &1833239960361825811
+--- !u!208 &8033152853067237573
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1227,8 +1227,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 1197294632466888224}
   - component: {fileID: 913055211626590253}
   - component: {fileID: 1802012690088083403}
-  - component: {fileID: 1983358671625623389}
+  - component: {fileID: 4411394392031440477}
   m_Layer: 6
   m_Name: Wall (1)
   m_TagString: Wall
@@ -1443,7 +1443,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &1983358671625623389
+--- !u!208 &4411394392031440477
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1453,8 +1453,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.25, z: 0.049999993}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1472,7 +1472,7 @@ GameObject:
   - component: {fileID: 3709629673141979624}
   - component: {fileID: 6192591318776804082}
   - component: {fileID: 6917781080637164999}
-  - component: {fileID: 2548067220168184839}
+  - component: {fileID: 6269377278261040194}
   m_Layer: 6
   m_Name: Wall (6)
   m_TagString: Wall
@@ -1572,7 +1572,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &2548067220168184839
+--- !u!208 &6269377278261040194
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1582,8 +1582,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.25, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1831,7 +1831,7 @@ GameObject:
   - component: {fileID: 7805803322512434283}
   - component: {fileID: 6130645012666912669}
   - component: {fileID: 1373670248438516924}
-  - component: {fileID: 6262809489067895209}
+  - component: {fileID: 6809552982042743385}
   m_Layer: 6
   m_Name: Wall (5)
   m_TagString: Wall
@@ -1931,7 +1931,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &6262809489067895209
+--- !u!208 &6809552982042743385
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1941,8 +1941,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.25, y: 0.25, z: 0.049999993}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -2282,7 +2282,7 @@ GameObject:
   - component: {fileID: 313113496567125117}
   - component: {fileID: 7392646553118297100}
   - component: {fileID: 1295496038947893517}
-  - component: {fileID: 2696211151962785828}
+  - component: {fileID: 8233301985729684308}
   m_Layer: 6
   m_Name: Wall (22)
   m_TagString: Wall
@@ -2382,7 +2382,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &2696211151962785828
+--- !u!208 &8233301985729684308
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2392,8 +2392,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -2411,7 +2411,6 @@ GameObject:
   - component: {fileID: 319625374296815177}
   - component: {fileID: 3209935751795808680}
   - component: {fileID: 6180802016167653792}
-  - component: {fileID: 5446033624011219641}
   m_Layer: 0
   m_Name: Door (1)
   m_TagString: Door
@@ -2507,22 +2506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59fed124ce096534184171cac3a4a683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!208 &5446033624011219641
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4607066110799314606}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.3, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &4860581923839216259
 GameObject:
   m_ObjectHideFlags: 0
@@ -2536,7 +2519,7 @@ GameObject:
   - component: {fileID: 142704648807456868}
   - component: {fileID: 2975599291938462313}
   - component: {fileID: 3957260946022663349}
-  - component: {fileID: 7720730392640520527}
+  - component: {fileID: 657785247774975826}
   m_Layer: 6
   m_Name: Wall (9)
   m_TagString: Wall
@@ -2636,7 +2619,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &7720730392640520527
+--- !u!208 &657785247774975826
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2646,8 +2629,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -2944,7 +2927,7 @@ GameObject:
   - component: {fileID: 1029198055482489587}
   - component: {fileID: 3669917160963213406}
   - component: {fileID: 3560437162064599869}
-  - component: {fileID: 1241930771678724465}
+  - component: {fileID: 4237111691916915296}
   m_Layer: 6
   m_Name: Wall (3)
   m_TagString: Wall
@@ -3044,7 +3027,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &1241930771678724465
+--- !u!208 &4237111691916915296
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3054,8 +3037,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -3155,7 +3138,7 @@ GameObject:
   - component: {fileID: 3321711072088196972}
   - component: {fileID: 1408964830103134455}
   - component: {fileID: 1409181856094071388}
-  - component: {fileID: 2444172224638461850}
+  - component: {fileID: 5570477372228564509}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -3255,7 +3238,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &2444172224638461850
+--- !u!208 &5570477372228564509
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3265,8 +3248,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.25, z: 0.049999993}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -3494,7 +3477,7 @@ GameObject:
   - component: {fileID: 1988870770857480656}
   - component: {fileID: 3202042142317475123}
   - component: {fileID: 7045848151577955518}
-  - component: {fileID: 7418276933460436898}
+  - component: {fileID: 766461168797983496}
   m_Layer: 6
   m_Name: Wall (2)
   m_TagString: Wall
@@ -3594,7 +3577,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &7418276933460436898
+--- !u!208 &766461168797983496
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3604,8 +3587,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.34999996, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -3733,7 +3716,7 @@ GameObject:
   - component: {fileID: 4337725481971423175}
   - component: {fileID: 1197218545738394568}
   - component: {fileID: 4054374357379869415}
-  - component: {fileID: 7512492008087358509}
+  - component: {fileID: 6654220806714496409}
   m_Layer: 6
   m_Name: Wall (7)
   m_TagString: Wall
@@ -3833,7 +3816,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &7512492008087358509
+--- !u!208 &6654220806714496409
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3843,8 +3826,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.049999993, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -3862,7 +3845,7 @@ GameObject:
   - component: {fileID: 4461887070317397732}
   - component: {fileID: 5126432890087326090}
   - component: {fileID: 3207140779287969331}
-  - component: {fileID: 4864505985925444789}
+  - component: {fileID: 2636027943211866977}
   m_Layer: 6
   m_Name: Wall (21)
   m_TagString: Wall
@@ -3962,7 +3945,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &4864505985925444789
+--- !u!208 &2636027943211866977
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3972,8 +3955,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.3}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -3991,7 +3974,7 @@ GameObject:
   - component: {fileID: 5157053003295844627}
   - component: {fileID: 2097972523227869983}
   - component: {fileID: 6474567769613959708}
-  - component: {fileID: 8643733773505840583}
+  - component: {fileID: 3210051412649373847}
   m_Layer: 6
   m_Name: Wall (8)
   m_TagString: Wall
@@ -4091,7 +4074,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &8643733773505840583
+--- !u!208 &3210051412649373847
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4101,8 +4084,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -4164,7 +4147,7 @@ GameObject:
   - component: {fileID: 2304832022012591847}
   - component: {fileID: 2800329523164629004}
   - component: {fileID: 7217229680325041282}
-  - component: {fileID: 6304587950302874564}
+  - component: {fileID: 3919088590363650918}
   m_Layer: 6
   m_Name: Wall (12)
   m_TagString: Wall
@@ -4264,7 +4247,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &6304587950302874564
+--- !u!208 &3919088590363650918
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4274,8 +4257,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -4375,7 +4358,7 @@ GameObject:
   - component: {fileID: 8085592135587877801}
   - component: {fileID: 3610507947503193545}
   - component: {fileID: 5353441606625139446}
-  - component: {fileID: 3822196162973764661}
+  - component: {fileID: 1933698705114271912}
   m_Layer: 6
   m_Name: Wall (17)
   m_TagString: Wall
@@ -4475,7 +4458,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &3822196162973764661
+--- !u!208 &1933698705114271912
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4485,8 +4468,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -4504,7 +4487,7 @@ GameObject:
   - component: {fileID: 6376552022420435964}
   - component: {fileID: 7066534620081718618}
   - component: {fileID: 5962212258525706801}
-  - component: {fileID: 6850482002956461465}
+  - component: {fileID: 4749241665532317476}
   m_Layer: 6
   m_Name: Wall (13)
   m_TagString: Wall
@@ -4604,7 +4587,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &6850482002956461465
+--- !u!208 &4749241665532317476
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4614,8 +4597,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.3}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -4748,7 +4731,7 @@ GameObject:
   - component: {fileID: 4520400418830556183}
   - component: {fileID: 7812031394388139367}
   - component: {fileID: 9214494523797034700}
-  - component: {fileID: 1087895676767863340}
+  - component: {fileID: 7264236966448423802}
   m_Layer: 6
   m_Name: Wall (4)
   m_TagString: Wall
@@ -4848,7 +4831,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &1087895676767863340
+--- !u!208 &7264236966448423802
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4858,8 +4841,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.34999996, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -5069,7 +5052,7 @@ GameObject:
   - component: {fileID: 8713873898522711333}
   - component: {fileID: 5009165783479072294}
   - component: {fileID: 2649553784985269152}
-  - component: {fileID: 3914487650693680827}
+  - component: {fileID: 6283153304268777255}
   m_Layer: 6
   m_Name: Wall (11)
   m_TagString: Wall
@@ -5169,7 +5152,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!208 &3914487650693680827
+--- !u!208 &6283153304268777255
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5179,8 +5162,8 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.25, z: 0.05}
-  m_MoveThreshold: 0.2
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}

@@ -40,8 +40,7 @@ public class RoomSpawner : MonoBehaviour
     void Start()
     {
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        Invoke("Spawn", 0.0f); //0.5f
-        //Destroy(gameObject, waitTime);  
+        Invoke("Spawn", 0.0f); //0.5f 
     }
 
     public void Spawn()
@@ -85,20 +84,17 @@ public class RoomSpawner : MonoBehaviour
                         templates.stageCounter++;
                         SpecialRoomSpawn(templates.CheckPointRoom);
                         templates.isCheckPointRoomSpawned = true;
-                        //nextRoom.GetComponent<AddRoom>().stage = templates.stageCounter;
                     }
                     else if (templates.stageCounter == 2 && templates.TrapRoomCounter == 1)
                     {
                         templates.stageCounter++;
                         SpecialRoomSpawn(templates.CheckPointRoom);
                         templates.isCheckPointRoomSpawned = true;
-                        //nextRoom.GetComponent<AddRoom>().stage = templates.stageCounter;
                     }
                     else if (templates.stageCounter == 3 && templates.TrapRoomCounter == 1)
                     {
                         SpecialRoomSpawn(templates.FinishRoom);
                         templates.isFinishRoomSpawned = true;
-                        //nextRoom.GetComponent<AddRoom>().stage = templates.stageCounter;
                     }
                 }
             }
@@ -125,9 +121,6 @@ public class RoomSpawner : MonoBehaviour
         if (!this.GetComponentInParent<AddRoom>().gameObject.CompareTag("SpawnRoom") && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("CheckPointRoom")
             && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("KeyRoom") && !this.GetComponentInParent<AddRoom>().gameObject.CompareTag("TrapRoom"))
             this.GetComponentInParent<DeleteRoom>().Invoke("spaceCheck", 0.0f); //0.3f
-
-
-        //DestroyUnUsedSpawnPoint();
     }
 
     private void SelectRoom(GameObject[] roomList)
@@ -371,11 +364,8 @@ public class RoomSpawner : MonoBehaviour
             
         if (isStepBack == true)
         {
-            //if (this.GetComponentInParent<AddRoom>().gameObject.CompareTag("CheckPointRoom") || this.GetComponentInParent<AddRoom>().gameObject.CompareTag("SpawnRoom"))
-            //    deletedRoomIndex = this.nextRoom.GetComponent<AddRoom>().newRoom.listIndex;
             templates.g.roomLists[this.gameObject.GetComponentInParent<AddRoom>().lastIndex].Remove(this.nextRoom.GetComponent<AddRoom>().newRoom);
             Destroy(this.nextRoom);
-            Debug.Log(templates.g.toStr());
             isSpawned = false;
             isStepBack = false;
             Invoke("Spawn", 0.0f); //0.5f
@@ -403,21 +393,5 @@ public class RoomSpawner : MonoBehaviour
         {
             lastAddedRoom.GetComponent<DeleteStageRooms>().enabled = true;
         }
-    }
-
-    void DestroyUnUsedSpawnPoint()
-    {
-        if(!this.gameObject.GetComponentInParent<AddRoom>().gameObject.CompareTag("SpawnRoom"))
-        {
-            if(!this.prevRoom.CompareTag("SpawnRoom"))
-            {
-                RoomSpawner[] prevRoomSpawnPoints = this.prevRoom.GetComponentsInChildren<RoomSpawner>();
-                foreach (RoomSpawner rs in prevRoomSpawnPoints)
-                {
-                    if (rs.nextRoom == null)
-                        Destroy(rs.gameObject);
-                }
-            } 
-        }  
     }
 }

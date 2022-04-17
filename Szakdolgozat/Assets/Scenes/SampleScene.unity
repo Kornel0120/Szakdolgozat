@@ -445,9 +445,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
+      propertyPath: m_TileSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.02333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: d1e9b67b9ff9e164dbc0cdd68a35f496, type: 2}
+    - target: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
+      propertyPath: m_UseGeometry
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
+      propertyPath: m_OverrideTileSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 734110627521433671, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
+      propertyPath: m_OverrideVoxelSize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2248982706945715526, guid: 1b9e8071249b8594f968b51932980d9b, type: 3}
       propertyPath: m_RootOrder
       value: 1

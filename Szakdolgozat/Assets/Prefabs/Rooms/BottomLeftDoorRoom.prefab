@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1322294478700916909}
   - component: {fileID: 1623382119451861800}
-  - component: {fileID: 1482557206572270031}
-  - component: {fileID: 4771299492879587302}
   - component: {fileID: 2042904582263090241}
   m_Layer: 0
   m_Name: BottomLeftDoorRoom
@@ -54,32 +52,6 @@ MonoBehaviour:
   lastIndex: 3
   stage: 0
   nextRoom: {fileID: 0}
---- !u!65 &1482557206572270031
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365295052536472309}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.3, z: 0.5}
-  m_Center: {x: 0.6, y: 0.4, z: 0}
---- !u!65 &4771299492879587302
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365295052536472309}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.3, z: 0.15}
-  m_Center: {x: 0, y: 0.4, z: 0.6}
 --- !u!114 &2042904582263090241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +192,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.25, z: 0.05}
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.2
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -349,7 +321,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.25, z: 0.05}
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.2
   m_Carve: 1
   m_CarveOnlyStationary: 1

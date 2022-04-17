@@ -53,36 +53,29 @@
     <UnityVersion>2020.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\SpaceCheck.cs" />
     <Compile Include="Assets\Scripts\PressurePlateActivated.cs" />
     <Compile Include="Assets\Scripts\DeleteRoom.cs" />
     <Compile Include="Assets\Scripts\PuzzleCubeSawn.cs" />
     <Compile Include="Assets\Scripts\GuardSpawn.cs" />
-    <Compile Include="Assets\Scripts\WallCheck.cs" />
     <Compile Include="Assets\Scripts\MoveCam.cs" />
     <Compile Include="Assets\Scripts\MeshBuild.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementRigidBody.cs" />
-    <Compile Include="Assets\Scripts\GenerableDirection.cs" />
     <Compile Include="Assets\Scripts\AddRoom.cs" />
     <Compile Include="Assets\Scripts\KeyPickUp.cs" />
-    <Compile Include="Assets\Scripts\OldMovement\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerSpawn.cs" />
     <Compile Include="Assets\Scripts\CheckPointDoorOpen.cs" />
-    <Compile Include="Assets\Scripts\OldMovement\MouseLook.cs" />
     <Compile Include="Assets\Scripts\CamControll.cs" />
-    <Compile Include="Assets\Scriptek\DemoScript.cs" />
     <Compile Include="Assets\Scripts\Graph.cs" />
     <Compile Include="Assets\Scripts\DeleteStageRooms.cs" />
     <Compile Include="Assets\Scripts\PlayerCheckInSpawnRoom.cs" />
     <Compile Include="Assets\Scripts\GuardMovement.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />
     <Compile Include="Assets\Scripts\RoomTemplates.cs" />
-    <Compile Include="Assets\Scripts\NavMeshSurfuceGenerator.cs" />
     <Compile Include="Assets\Scripts\RoomSpawner.cs" />
     <Compile Include="Assets\Scripts\SpawnRoomSpawn.cs" />
     <Compile Include="Assets\Scripts\TrapRoomDoorsOpen.cs" />
-    <Compile Include="Assets\Scripts\TrapRoomController.cs" />
     <Compile Include="Assets\Scripts\DeleteStageRoomSpawners.cs" />
+    <Compile Include="Assets\Scripts\TrapRoomController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

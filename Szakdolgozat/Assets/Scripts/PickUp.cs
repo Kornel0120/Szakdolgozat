@@ -8,7 +8,6 @@ public class PickUp : MonoBehaviour
     GameObject thisTrapRoom;
     GameObject[] TrapRooms;
     PressurePlateActivated firstPressurePlate;
-
     private void Start()
     {
         TrapRooms = GameObject.FindGameObjectsWithTag("TrapRoom");

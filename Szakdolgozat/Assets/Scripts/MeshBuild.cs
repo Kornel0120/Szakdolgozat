@@ -24,11 +24,6 @@ public class MeshBuild : MonoBehaviour
         if(isMeshGenerated == false && templates.isFinishRoomSpawned == true)
         {
             surface.BuildNavMesh();
-            //GameObject.FindGameObjectWithTag("SpawnRoom").GetComponent<GuardSpawn>().enabled = true;
-            //foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("CheckPointRoom"))
-            //{
-            //    gameObject.GetComponent<GuardSpawn>().enabled = true;
-            //}
             isMeshGenerated = true;
         }
 

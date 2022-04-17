@@ -83,8 +83,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1453091138551370575}
   - component: {fileID: 508844323007412105}
-  - component: {fileID: 3503166521515184122}
-  - component: {fileID: 1762839065696097578}
   - component: {fileID: 9001265078205576762}
   m_Layer: 0
   m_Name: BottomRightDoorRoom
@@ -127,32 +125,6 @@ MonoBehaviour:
   lastIndex: 1
   stage: 1
   nextRoom: {fileID: 0}
---- !u!65 &3503166521515184122
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176663612340681639}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.3, z: 0.5}
-  m_Center: {x: -0.6, y: 0.4, z: 0}
---- !u!65 &1762839065696097578
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176663612340681639}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.3, z: 0.15}
-  m_Center: {x: 0, y: 0.4, z: 0.6}
 --- !u!114 &9001265078205576762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +151,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4335293311859046240}
-  - component: {fileID: 8127899994059503541}
   - component: {fileID: 500054125312444935}
   m_Layer: 0
   m_Name: RoomSpawnPoint (1)
@@ -202,19 +173,6 @@ Transform:
   m_Father: {fileID: 1453091138551370575}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8127899994059503541
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5375930732300652540}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.65, z: 0.1}
-  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!114 &500054125312444935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +324,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.25, z: 0.05}
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.2
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -495,7 +453,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.25, z: 0.05}
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.2
   m_Carve: 1
   m_CarveOnlyStationary: 1

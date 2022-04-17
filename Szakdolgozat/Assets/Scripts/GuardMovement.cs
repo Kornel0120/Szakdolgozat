@@ -15,6 +15,7 @@ public class GuardMovement : MonoBehaviour
     public List<Vector3> PatrolLocations = new List<Vector3>();
 
     public int Index = 0;
+    public Vector3 currentLocation;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class GuardMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         PatrolLocations = FindEndLocation(stage);
         agent.SetDestination(PatrolLocations[Index]);
+        currentLocation = PatrolLocations[Index];
     }
 
     void FixedUpdate()
@@ -31,11 +33,13 @@ public class GuardMovement : MonoBehaviour
             if (Index == PatrolLocations.Count - 1)
             {
                 Index = 0;
+                currentLocation = PatrolLocations[Index];
                 agent.SetDestination(PatrolLocations[Index]);
             }
             else
             {
                 Index++;
+                currentLocation = PatrolLocations[Index];
                 agent.SetDestination(PatrolLocations[Index]);
             }
         }

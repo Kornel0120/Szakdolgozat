@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerCheckInSpawnRoom : MonoBehaviour
 {
     [SerializeField] LayerMask groundMask;
-    private bool isPlayerOutSide = false;
     private RoomTemplates templates;
     private List<string> inRangeGameObjects = new List<string>();
 

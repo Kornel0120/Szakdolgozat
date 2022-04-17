@@ -21,14 +21,8 @@ public class DeleteRoom : MonoBehaviour
 
     public void spaceCheck()
     {
-        //foreach (bool space in isEnoughSpace)
-        //{
-        //    if (space == false)
-        //        falseSpace++;
-        //}
-
-            if (!isEnoughSpace.Contains(true))
-                invokeDeleteNextRoomScript();
+        if (!isEnoughSpace.Contains(true))
+            invokeDeleteNextRoomScript();
     }
 
     private void invokeDeleteNextRoomScript()
